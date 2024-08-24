@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "pdf-to-html"
+version = "0.1.0"
+description = ""
+authors = ["Philip Youssef <pyoussef@rippling.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pypdf2 = "^3.0.1"
+pillow = "^10.4.0"
+beautifulsoup4 = "^4.12.3"
+pdfminer-six = "^20240706"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
