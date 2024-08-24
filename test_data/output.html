@@ -1,8 +1,44 @@
 <html><head><link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"/><style>
+        body { transition: background-color 0.3s, color 0.3s; }
         .pdf-page { margin-bottom: 20px; }
         .pdf-content { position: relative; }
         .pdf-element { margin-bottom: 10px; }
-    </style></head><body><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script><div class="container"><select class="form-control mb-3" id="font-size-selector"><option value="8">8px</option><option value="9">9px</option><option value="10">10px</option><option value="11">11px</option><option value="12">12px</option><option value="13">13px</option><option value="14">14px</option><option value="15">15px</option><option selected="selected" value="16">16px</option><option value="17">17px</option><option value="18">18px</option><option value="19">19px</option><option value="20">20px</option><option value="21">21px</option><option value="22">22px</option><option value="23">23px</option><option value="24">24px</option></select><p class="pdf-element" data-original-size="10.00">3
+        #controls { 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            right: 0;
+            background-color: #f8f9fa; 
+            padding: 15px; 
+            z-index: 1000; 
+            transition: transform 0.3s ease-in-out;
+        }
+        #controls.minimized {
+            transform: translateY(-100%);
+        }
+        #divet {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background-color: #007bff;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 1001;
+            transition: background-color 0.3s;
+            border: none;
+            font-size: 18px;
+        }
+        body.dark #divet {
+            background-color: #ffffff;
+            color: #1a1a1a;
+        }
+        body.sepia #divet {
+            background-color: #5b4636;
+            color: #f4ecd8;
+        }
+    </style><link href="https://fonts.googleapis.com/css2?family=Arial&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Helvetica&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Times+New+Roman&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Courier+Prime&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Verdana&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Georgia&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Palatino&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=EB+Garamond&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Bookman&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Bookerly&amp;display=swap" rel="stylesheet"/></head><body><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script><div class="container"><button id="divet">🕹️</button><div class="row mb-3" id="controls"><div class="col-md-4"><label for="font-size-selector">Size:</label><select class="form-control" id="font-size-selector"><option value="8">8px</option><option value="9">9px</option><option value="10">10px</option><option value="11">11px</option><option value="12">12px</option><option selected="selected" value="13">13px</option><option value="14">14px</option><option value="15">15px</option><option value="16">16px</option><option value="17">17px</option><option value="18">18px</option><option value="19">19px</option><option value="20">20px</option><option value="21">21px</option><option value="22">22px</option><option value="23">23px</option><option value="24">24px</option></select></div><div class="col-md-4"><label for="reading-mode-selector">Reading Mode:</label><select class="form-control" id="reading-mode-selector"><option value="light">Light</option><option value="dark">Dark</option><option value="sepia">Sepia</option></select></div><div class="col-md-4"><label for="font-selector">Font:</label><select class="form-control" id="font-selector"><option value="Arial">Arial</option><option value="Helvetica">Helvetica</option><option value="Times New Roman">Times New Roman</option><option value="Courier New">Courier New</option><option value="Verdana">Verdana</option><option value="Georgia">Georgia</option><option value="Palatino">Palatino</option><option value="Garamond">Garamond</option><option value="Bookman">Bookman</option><option value="Bookerly">Bookerly</option></select></div></div><p class="pdf-element" data-original-size="10.00">3
 2
 0
 2</p><p class="pdf-element" data-original-size="6.66">r
@@ -1088,7 +1124,7 @@ On the diningtable 1, you see a apple 1, a bread 1, a butterknife 2, a cup 2, a 
 2, a knife 2, a knife 1, a ladle 1, a mug 2, a mug 1, a pan 2, a peppershaker 1, a
 spatula 3, a tomato 2, and a tomato 1.
 &gt; put lettuce 1 in/on diningtable 1
-You put the lettuce 1 in/on the diningtable 1.</p><p class="pdf-element" data-original-size="6.97">Next, I need to go to sinkbasin (1) and clean</p><p class="pdf-element" data-original-size="6.97">Next, I need to put it in/on diningtable 1.</p><p class="pdf-element" data-original-size="6.97">In it, you see a cup 3, a egg 2, a</p><p class="pdf-element" data-original-size="6.97">Now I find a lettuce (1).</p><p class="pdf-element" data-original-size="6.97">Now I take a lettuce (1).</p><p class="pdf-element" data-original-size="6.97">Next, I need to take it.</p><p class="pdf-element" data-original-size="9.96">24</p><p class="pdf-element" data-original-size="9.96">Published as a conference paper at ICLR 2023</p><p class="pdf-element" data-original-size="9.96">Table 9: An ReAct-IM prompt on the ALFWorld clean task.</p><p class="pdf-element" data-original-size="6.97">The fridge 1 is open.</p><p class="pdf-element" data-original-size="6.97">First I need to find a lettuce.</p><p class="pdf-element" data-original-size="6.97">First I need to find a lettuce.</p><p class="pdf-element" data-original-size="6.97">First I need to find a lettuce.</p><p class="pdf-element" data-original-size="6.97">In it, you see a cup 3, a egg 2, a</p><p class="pdf-element" data-original-size="6.97">Looking quickly around you, you see a cabinet</p><p class="pdf-element" data-original-size="6.97">To solve the task, I need to find and take a lettuce, then clean it with</p><p class="pdf-element" data-original-size="6.97">You are in the middle of a room.
+You put the lettuce 1 in/on the diningtable 1.</p><p class="pdf-element" data-original-size="6.97">Next, I need to go to sinkbasin (1) and clean</p><p class="pdf-element" data-original-size="6.97">Next, I need to put it in/on diningtable 1.</p><p class="pdf-element" data-original-size="6.97">In it, you see a cup 3, a egg 2, a</p><p class="pdf-element" data-original-size="6.97">Now I take a lettuce (1).</p><p class="pdf-element" data-original-size="6.97">Now I find a lettuce (1).</p><p class="pdf-element" data-original-size="6.97">Next, I need to take it.</p><p class="pdf-element" data-original-size="9.96">24</p><p class="pdf-element" data-original-size="9.96">Published as a conference paper at ICLR 2023</p><p class="pdf-element" data-original-size="9.96">Table 9: An ReAct-IM prompt on the ALFWorld clean task.</p><p class="pdf-element" data-original-size="6.97">The fridge 1 is open.</p><p class="pdf-element" data-original-size="6.97">First I need to find a lettuce.</p><p class="pdf-element" data-original-size="6.97">First I need to find a lettuce.</p><p class="pdf-element" data-original-size="6.97">First I need to find a lettuce.</p><p class="pdf-element" data-original-size="6.97">In it, you see a cup 3, a egg 2, a</p><p class="pdf-element" data-original-size="6.97">Looking quickly around you, you see a cabinet</p><p class="pdf-element" data-original-size="6.97">To solve the task, I need to find and take a lettuce, then clean it with</p><p class="pdf-element" data-original-size="6.97">You are in the middle of a room.
 13, a cabinet 12, a cabinet 11, a cabinet 10, a cabinet 9, a cabinet 8, a cabinet
 7, a cabinet 6, a cabinet 5, a cabinet 4, a cabinet 3, a cabinet 2, a cabinet
 1, a coffeemachine 1, a countertop 1, a diningtable 1, a drawer 1, a fridge 1, a
@@ -1622,8 +1658,8 @@ Let’s think step by step.
 Psych is an American Detective Comedy Drama television series created by
 Steve Franks.
 Psych (label:</p><p class="pdf-element" data-original-size="6.97">Psych is an American detective comedy-drama)</p><p class="pdf-element" data-original-size="6.97">Kurt Fuller from Stockton, CA appeared in Psych.</p><p class="pdf-element" data-original-size="9.96">33</p></div><script>
-    document.getElementById('font-size-selector').addEventListener('change', function() {
-        var baseFontSize = parseInt(this.value);
+    function updateFontSize() {
+        var baseFontSize = parseInt(document.getElementById('font-size-selector').value);
         var mostCommonFontSize = 6.973800;
         var elements = document.getElementsByClassName('pdf-element');
         for (var i = 0; i < elements.length; i++) {
@@ -1631,9 +1667,54 @@ Psych (label:</p><p class="pdf-element" data-original-size="6.97">Psych is an Am
             var newSize = (originalSize / mostCommonFontSize) * baseFontSize;
             elements[i].style.fontSize = newSize + 'px';
         }
-    });
-    
+    }
+
+    function updateReadingMode() {
+        var mode = document.getElementById('reading-mode-selector').value;
+        var body = document.body;
+        var divet = document.getElementById('divet');
+        switch(mode) {
+            case 'light':
+                body.style.backgroundColor = '#ffffff';
+                body.style.color = '#000000';
+                body.className = 'light';
+                divet.style.backgroundColor = '#007bff';
+                divet.style.color = '#ffffff';
+                break;
+            case 'dark':
+                body.style.backgroundColor = '#1a1a1a';
+                body.style.color = '#ffffff';
+                body.className = 'dark';
+                divet.style.backgroundColor = '#ffffff';
+                divet.style.color = '#1a1a1a';
+                break;
+            case 'sepia':
+                body.style.backgroundColor = '#f4ecd8';
+                body.style.color = '#5b4636';
+                body.className = 'sepia';
+                divet.style.backgroundColor = '#5b4636';
+                divet.style.color = '#f4ecd8';
+                break;
+        }
+    }
+
+    function updateFont() {
+        var font = document.getElementById('font-selector').value;
+        document.body.style.fontFamily = font + ', sans-serif';
+    }
+
+    function toggleControls() {
+        var controls = document.getElementById('controls');
+        controls.classList.toggle('minimized');
+    }
+
+    document.getElementById('font-size-selector').addEventListener('change', updateFontSize);
+    document.getElementById('reading-mode-selector').addEventListener('change', updateReadingMode);
+    document.getElementById('font-selector').addEventListener('change', updateFont);
+    document.getElementById('divet').addEventListener('click', toggleControls);
+
     // Initial setup
-    var event = new Event('change');
-    document.getElementById('font-size-selector').dispatchEvent(event);
+    updateFontSize();
+    updateReadingMode();
+    updateFont();
     </script></body></html>
