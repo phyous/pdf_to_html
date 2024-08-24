@@ -7,7 +7,7 @@ This project provides a Python script that converts PDF files to HTML, preservin
 |-------------------|------------------|
 | ![Before Conversion](images/before.png) | ![After Conversion](images/after.png) |
 
-➡️ Try it out here: [Sample HTML](test_data/output.html)
+➡️ Try it out here: [Sample HTML](https://phyous.github.io/pdf_to_html/output.html)
 
 ## Features
 
