@@ -17,6 +17,16 @@ This project provides a Python script that converts PDF files to HTML, preservin
 - Utilizes Bootstrap for a responsive and mobile-friendly design
 - Logs processing information for easy debugging
 
+## TODOs
+Add proper parsing for the following:
+- Tables
+- Images
+- Lists
+- Equations
+- Code Blocks
+- Citations
+- References
+
 ## Requirements
 
 - Python 3.10+
