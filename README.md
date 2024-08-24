@@ -3,12 +3,11 @@
 This project provides a Python script that converts PDF files to HTML, preserving the original formatting and allowing for dynamic font size adjustments. It's particularly useful for making PDF content more accessible and readable on various devices.
 
 ## Demo
+| Before Conversion | After Conversion |
+|-------------------|------------------|
+| ![Before Conversion](images/before.png) | ![After Conversion](images/after.png) |
 
-<div style="display: flex; justify-content: space-between;">
-  <iframe src="test_data/2210.03629v3.pdf" style="width: 49%; height: 500px;" scrolling="yes"></iframe>
-  <iframe src="test_data/output.html" style="width: 49%; height: 500px;" scrolling="yes"></iframe>
-</div>
-
+➡️ Try it out here: [Sample HTML](test_data/output.html)
 
 ## Features
 
