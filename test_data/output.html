@@ -2,19 +2,19 @@
         .pdf-page { margin-bottom: 20px; }
         .pdf-content { position: relative; }
         .pdf-element { margin-bottom: 10px; }
-    </style></head><body><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script><div class="container"><div class="pdf-page"><div class="pdf-content"><p class="pdf-element">3
+    </style></head><body><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script><div class="container"><select class="form-control mb-3" id="font-size-selector"><option value="8">8px</option><option value="9">9px</option><option value="10">10px</option><option value="11">11px</option><option value="12">12px</option><option value="13">13px</option><option value="14">14px</option><option value="15">15px</option><option selected="selected" value="16">16px</option><option value="17">17px</option><option value="18">18px</option><option value="19">19px</option><option value="20">20px</option><option value="21">21px</option><option value="22">22px</option><option value="23">23px</option><option value="24">24px</option></select><p class="pdf-element" data-original-size="10.00">3
 2
 0
-2</p><p class="pdf-element">r
-a</p><p class="pdf-element">M
+2</p><p class="pdf-element" data-original-size="6.66">r
+a</p><p class="pdf-element" data-original-size="17.78">M
 0
-1</p><p class="pdf-element">]
+1</p><p class="pdf-element" data-original-size="6.66">]
 L
 C
 .
 s
 c
-[</p><p class="pdf-element">3
+[</p><p class="pdf-element" data-original-size="10.00">3
 v
 9
 2
@@ -31,11 +31,11 @@ v
 i
 X
 r
-a</p><p class="pdf-element">Published as a conference paper at ICLR 2023</p><p class="pdf-element">REAC T: SYNERGIZING REASONING AND ACTING IN
-LANGUAGE MODELS</p><p class="pdf-element">Shunyu Yao∗*,1, Jeffrey Zhao2, Dian Yu2, Nan Du2, Izhak Shafran2, Karthik Narasimhan1, Yuan Cao2</p><p class="pdf-element">1Department of Computer Science, Princeton University
+a</p><p class="pdf-element" data-original-size="9.96">Published as a conference paper at ICLR 2023</p><p class="pdf-element" data-original-size="17.22">REAC T: SYNERGIZING REASONING AND ACTING IN
+LANGUAGE MODELS</p><p class="pdf-element" data-original-size="9.96">Shunyu Yao∗*,1, Jeffrey Zhao2, Dian Yu2, Nan Du2, Izhak Shafran2, Karthik Narasimhan1, Yuan Cao2</p><p class="pdf-element" data-original-size="6.97">1Department of Computer Science, Princeton University
 2Google Research, Brain team
 1{shunyuy,karthikn}@princeton.edu
-2{jeffreyzhao,dianyu,dunan,izhak,yuancao}@google.com</p><p class="pdf-element">ABSTRACT</p><p class="pdf-element">While large language models (LLMs) have demonstrated impressive performance
+2{jeffreyzhao,dianyu,dunan,izhak,yuancao}@google.com</p><p class="pdf-element" data-original-size="11.96">ABSTRACT</p><p class="pdf-element" data-original-size="9.96">While large language models (LLMs) have demonstrated impressive performance
 across tasks in language understanding and interactive decision making, their
 abilities for reasoning (e.g. chain-of-thought prompting) and acting (e.g. action
 plan generation) have primarily been studied as separate topics. In this paper, we
@@ -54,7 +54,7 @@ trajectories that are more interpretable than baselines without reasoning traces
 Furthermore, on two interactive decision making benchmarks (ALFWorld and
 WebShop), ReAct outperforms imitation and reinforcement learning methods by
 an absolute success rate of 34% and 10% respectively, while being prompted with
-only one or two in-context examples.</p><p class="pdf-element">1</p><p class="pdf-element">INTRODUCTION</p><p class="pdf-element">A unique feature of human intelligence is the ability to seamlessly combine task-oriented actions with
+only one or two in-context examples.</p><p class="pdf-element" data-original-size="11.96">1</p><p class="pdf-element" data-original-size="11.96">INTRODUCTION</p><p class="pdf-element" data-original-size="9.96">A unique feature of human intelligence is the ability to seamlessly combine task-oriented actions with
 verbal reasoning (or inner speech, Alderson-Day &amp; Fernyhough, 2015), which has been theorized to
 play an important role in human cognition for enabling self-regulation or strategization (Vygotsky,
 1987; Luria, 1965; Fernyhough, 2010) and maintaining a working memory (Baddeley, 1992). Con-
@@ -66,13 +66,13 @@ I prepare dough? Let me search on the Internet”). We may also act (open a cook
 recipe, open the fridge, check ingredients) to support the reasoning and to answer questions (“What
 dish can I make right now?”). This tight synergy between “acting” and “reasoning” allows humans
 to learn new tasks quickly and perform robust decision making or reasoning, even under previously
-unseen circumstances or facing information uncertainties.</p><p class="pdf-element">Recent results have hinted at the possibility of combining verbal reasoning with interactive decision
+unseen circumstances or facing information uncertainties.</p><p class="pdf-element" data-original-size="9.96">Recent results have hinted at the possibility of combining verbal reasoning with interactive decision
 making in autonomous systems. On one hand, properly prompted large language models (LLMs)
-have demonstrated emergent capabilities to carry out several steps of reasoning traces to derive</p><p class="pdf-element">∗Work during Google internship. Projet page with code: https://react-lm.github.io/.</p><p class="pdf-element">1</p></div></div><div class="pdf-page"><div class="pdf-content"><p class="pdf-element">Published as a conference paper at ICLR 2023</p><p class="pdf-element">Figure 1: (1) Comparison of 4 prompting methods, (a) Standard, (b) Chain-of-thought (CoT,
+have demonstrated emergent capabilities to carry out several steps of reasoning traces to derive</p><p class="pdf-element" data-original-size="5.98">∗Work during Google internship. Projet page with code: https://react-lm.github.io/.</p><p class="pdf-element" data-original-size="9.96">1</p><p class="pdf-element" data-original-size="9.96">Published as a conference paper at ICLR 2023</p><p class="pdf-element" data-original-size="9.96">Figure 1: (1) Comparison of 4 prompting methods, (a) Standard, (b) Chain-of-thought (CoT,
 Reason Only), (c) Act-only, and (d) ReAct (Reason+Act), solving a HotpotQA (Yang et al., 2018)
 question. (2) Comparison of (a) Act-only and (b) ReAct prompting to solve an AlfWorld (Shridhar
 et al., 2020b) game. In both domains, we omit in-context examples in the prompt, and only show task
-solving trajectories generated by the model (Act, Thought) and the environment (Obs).</p><p class="pdf-element">answers from questions in arithmetic, commonsense, and symbolic reasoning tasks (Wei et al.,
+solving trajectories generated by the model (Act, Thought) and the environment (Obs).</p><p class="pdf-element" data-original-size="9.96">answers from questions in arithmetic, commonsense, and symbolic reasoning tasks (Wei et al.,
 2022). However, this “chain-of-thought” reasoning is a static black box, in that the model uses
 its own internal representations to generate thoughts and is not grounded in the external world,
 which limits its ability to reason reactively or update its knowledge. This can lead to issues like fact
@@ -86,12 +86,12 @@ abstractly about high-level goals or maintain a working memory to support acting
 et al. (2022b) who perform a limited form of verbal reasoning to reiterate spatial facts about the
 current state. Beyond such simple embodied tasks to interact with a few blocks, there have not been
 studies on how reasoning and acting can be combined in a synergistic manner for general task solving,
-and if such a combination can bring systematic beneﬁts compared to reasoning or acting alone.</p><p class="pdf-element">In this work, we present ReAct, a general paradigm to combine reasoning and acting with language
+and if such a combination can bring systematic beneﬁts compared to reasoning or acting alone.</p><p class="pdf-element" data-original-size="9.96">In this work, we present ReAct, a general paradigm to combine reasoning and acting with language
 models for solving diverse language reasoning and decision making tasks (Figure 1). ReAct
 prompts LLMs to generate both verbal reasoning traces and actions pertaining to a task in an
 interleaved manner, which allows the model to perform dynamic reasoning to create, maintain, and
 adjust high-level plans for acting (reason to act), while also interact with the external environments
-(e.g. Wikipedia) to incorporate additional information into reasoning (act to reason).</p><p class="pdf-element">2</p></div></div><div class="pdf-page"><div class="pdf-content"><p class="pdf-element">Published as a conference paper at ICLR 2023</p><p class="pdf-element">We conduct empirical evaluations of ReAct and state-of-the-art baselines on four diverse benchmarks:
+(e.g. Wikipedia) to incorporate additional information into reasoning (act to reason).</p><p class="pdf-element" data-original-size="9.96">2</p><p class="pdf-element" data-original-size="9.96">Published as a conference paper at ICLR 2023</p><p class="pdf-element" data-original-size="9.96">We conduct empirical evaluations of ReAct and state-of-the-art baselines on four diverse benchmarks:
 question answering (HotPotQA, Yang et al., 2018), fact veriﬁcation (Fever, Thorne et al., 2018),
 text-based game (ALFWorld, Shridhar et al., 2020b), and webpage navigation (WebShop, Yao
 et al., 2022). For HotPotQA and Fever, with access to a Wikipedia API that the model can interact
@@ -106,7 +106,7 @@ over controlled baselines with actions only. Besides general applicability and p
 the combination of reasoning and acting also contributes to model interpretability, trustworthiness,
 and diagnosability across all domains, as humans can readily distinguish information from model’s
 internal knowledge versus external environments, as well as inspect reasoning traces to understand
-the decision basis of model actions.</p><p class="pdf-element">To summarize, our key contributions are the following: (1) we introduce ReAct, a novel prompt-
+the decision basis of model actions.</p><p class="pdf-element" data-original-size="9.96">To summarize, our key contributions are the following: (1) we introduce ReAct, a novel prompt-
 based paradigm to synergize reasoning and acting in language models for general task solving; (2) we
 perform extensive experiments across diverse benchmarks to showcase the advantage of ReAct in a
 few-shot learning setup over prior approaches that perform either reasoning or action generation in
@@ -115,7 +115,7 @@ reasoning tasks, and reasoning in interactive tasks; (4) we analyze the limitati
 prompting setup (i.e. limited support of reasoning and acting behaviors), and perform initial ﬁnetuning
 experiments showing the potential of ReAct to improve with additional training data. Scaling up
 ReAct to train and operate on more tasks and combining it with complementary paradigms like
-reinforcement learning could further unlock the potential of large language models.</p><p class="pdf-element">2 REAC T: SYNERGIZING RE ASONING + AC T ING</p><p class="pdf-element">Consider a general setup of an agent interacting with an environment for task solving. At time
+reinforcement learning could further unlock the potential of large language models.</p><p class="pdf-element" data-original-size="11.96">2 REAC T: SYNERGIZING RE ASONING + AC T ING</p><p class="pdf-element" data-original-size="9.96">Consider a general setup of an agent interacting with an environment for task solving. At time
 step t, an agent receives an observation ot ∈ O from the environment and takes an action at ∈ A
 following some policy π(at|ct), where ct = (o1, a1, · · · , ot−1, at−1, ot) is the context to the agent.
 Learning a policy is challenging when the mapping ct (cid:55)→ at is highly implicit and requires extensive
@@ -131,7 +131,7 @@ and update the context ct+1 = (ct, ˆat) to support future reasoning or acting. 
 there could be various types of useful thoughts, e.g. decomposing task goals and create action plans
 (2b, Act 1; 1d, Thought 1), injecting commonsense knowledge relevant to task solving (2b, Act 1),
 extracting important parts from observations (1d, Thought2, 4), track progress and transit action plans
-(2b, Act 8), handle exceptions and adjust action plans (1d, Thought 3), and so on.</p><p class="pdf-element">However, as the language space L is unlimited, learning in this augmented action space is difﬁcult
+(2b, Act 8), handle exceptions and adjust action plans (1d, Thought 3), and so on.</p><p class="pdf-element" data-original-size="9.96">However, as the language space L is unlimited, learning in this augmented action space is difﬁcult
 and requires strong language priors. In this paper, we mainly focus on the setup where a frozen
 large language model, PaLM-540B (Chowdhery et al., 2022)1, is prompted with few-shot in-context
 examples to generate both domain-speciﬁc actions and free-form language thoughts for task solving
@@ -139,8 +139,8 @@ examples to generate both domain-speciﬁc actions and free-form language though
 environment observations to solve a task instance (see Appendix C). For the tasks where reasoning is
 of primary importance (Figure 1(1)), we alternate the generation of thoughts and actions so that the
 task-solving trajectory consists of multiple thought-action-observation steps. In contrast, for decision
-making tasks that potentially involve a large number of actions (Figure 1(2)), thoughts only need to</p><p class="pdf-element">1We show some GPT-3 (Brown et al., 2020) results in Appendix A.1, which outperforms PaLM-540B.</p><p class="pdf-element">3</p></div></div><div class="pdf-page"><div class="pdf-content"><p class="pdf-element">Published as a conference paper at ICLR 2023</p><p class="pdf-element">appear sparsely in the most relevant positions of a trajectory, so we let the language model decide the
-asynchronous occurrence of thoughts and actions for itself.</p><p class="pdf-element">Since decision making and reasoning capabilities are integrated into a large language model, ReAct
+making tasks that potentially involve a large number of actions (Figure 1(2)), thoughts only need to</p><p class="pdf-element" data-original-size="5.98">1We show some GPT-3 (Brown et al., 2020) results in Appendix A.1, which outperforms PaLM-540B.</p><p class="pdf-element" data-original-size="9.96">3</p><p class="pdf-element" data-original-size="9.96">Published as a conference paper at ICLR 2023</p><p class="pdf-element" data-original-size="9.96">appear sparsely in the most relevant positions of a trajectory, so we let the language model decide the
+asynchronous occurrence of thoughts and actions for itself.</p><p class="pdf-element" data-original-size="9.96">Since decision making and reasoning capabilities are integrated into a large language model, ReAct
 enjoys several unique features: A) Intuitive and easy to design: Designing ReAct prompts is
 straightforward as human annotators just type down their thoughts in language on top of their actions
 taken. No ad-hoc format choice, thought design, or example selection is used in this paper. We detail
@@ -154,17 +154,17 @@ when ﬁnetuning is enabled, and in Section 4 how ReAct performance is robust to
 D) Human aligned and controllable: ReAct promises an interpretable sequential decision making
 and reasoning process where humans can easily inspect reasoning and factual correctness. Moreover,
 humans can also control or correct the agent behavior on the go by thought editing, as shown in
-Figure 5 in Section 4.</p><p class="pdf-element">3 KNOWLEDGE-INTENSIVE REASONING TASKS</p><p class="pdf-element">We begin with knowledge-intensive reasoning tasks like multi-hop question answering and fact
+Figure 5 in Section 4.</p><p class="pdf-element" data-original-size="11.96">3 KNOWLEDGE-INTENSIVE REASONING TASKS</p><p class="pdf-element" data-original-size="9.96">We begin with knowledge-intensive reasoning tasks like multi-hop question answering and fact
 veriﬁcation. As shown in Figure 1(1d), by interacting with a Wikipedia API, ReAct is able to
 retrieve information to support reasoning, while also use reasoning to target what to retrieve next,
-demonstrating a synergy of reasoning and acting.</p><p class="pdf-element">3.1 SETUP</p><p class="pdf-element">Domains We consider two datasets challenging knowledge retrieval and reasoning: (1) Hot-
+demonstrating a synergy of reasoning and acting.</p><p class="pdf-element" data-original-size="9.96">3.1 SETUP</p><p class="pdf-element" data-original-size="9.96">Domains We consider two datasets challenging knowledge retrieval and reasoning: (1) Hot-
 PotQA (Yang et al., 2018), a multi-hop question answering benchmark that requires reasoning
 over two or more Wikipedia passages, and (2) FEVER (Thorne et al., 2018), a fact veriﬁcation
 benchmark where each claim is annotated SUPPORTS, REFUTES, or NOT ENOUGH INFO, based
 on if there exists a Wikipedia passage to verify the claim. In this work, we operate in a question-only
 setup for both tasks, where models only receive the question/claim as input without access to support
 paragraphs, and have to rely on their internal knowledge or retrieve knowledge via interacting with
-an external environment to support reasoning.</p><p class="pdf-element">Action Space We design a simple Wikipedia web API with three types of actions to support
+an external environment to support reasoning.</p><p class="pdf-element" data-original-size="9.96">Action Space We design a simple Wikipedia web API with three types of actions to support
 interactive information retrieval: (1) search[entity], which returns the ﬁrst 5 sentences from
 the corresponding entity wiki page if it exists, or else suggests top-5 similar entities from the
 Wikipedia search engine, (2) lookup[string], which would return the next sentence in the page
@@ -172,32 +172,32 @@ containing string, simulating Ctrl+F functionality on the browser. (3) finish[an
 would ﬁnish the current task with answer. We note that this action space mostly can only retrieve a
 small part of a passage based on exact passage name, which is signiﬁcantly weaker than state-of-the-
 art lexical or neural retrievers. The purpose is to simulate how humans would interact with Wikipedia,
-and force models to retrieve via explicit reasoning in language.</p><p class="pdf-element">3.2 METHODS</p><p class="pdf-element">ReAct Prompting For HotpotQA and Fever, we randomly select 6 and 3 cases2 from the training
+and force models to retrieve via explicit reasoning in language.</p><p class="pdf-element" data-original-size="9.96">3.2 METHODS</p><p class="pdf-element" data-original-size="9.96">ReAct Prompting For HotpotQA and Fever, we randomly select 6 and 3 cases2 from the training
 set and manually compose ReAct-format trajectories to use as few-shot exemplars in the prompts.
 Similar to Figure 1(d), each trajectory consists of multiple thought-action-observation steps (i.e. dense
 thought), where free-form thoughts are used for various purposes. Speciﬁcally, we use a combination
 of thoughts that decompose questions (“I need to search x, ﬁnd y, then ﬁnd z”), extract information
 from Wikipedia observations (“x was started in 1844”, “The paragraph does not tell x”), perform
-commonsense (“x is not y, so z must instead be...”) or arithmetic reasoning (“1844 &lt; 1989”), guide</p><p class="pdf-element">2We ﬁnd more examples do not improve performance.</p><p class="pdf-element">4</p></div></div><div class="pdf-page"><div class="pdf-content"><p class="pdf-element">Published as a conference paper at ICLR 2023</p><p class="pdf-element">Prompt Methoda</p><p class="pdf-element">Standard
+commonsense (“x is not y, so z must instead be...”) or arithmetic reasoning (“1844 &lt; 1989”), guide</p><p class="pdf-element" data-original-size="5.98">2We ﬁnd more examples do not improve performance.</p><p class="pdf-element" data-original-size="9.96">4</p><p class="pdf-element" data-original-size="9.96">Published as a conference paper at ICLR 2023</p><p class="pdf-element" data-original-size="8.31">Prompt Methoda</p><p class="pdf-element" data-original-size="8.31">Standard
 CoT (Wei et al., 2022)
-CoT-SC (Wang et al., 2022a)</p><p class="pdf-element">Act
+CoT-SC (Wang et al., 2022a)</p><p class="pdf-element" data-original-size="8.31">Act
 ReAct
 CoT-SC → ReAct
-ReAct→ CoT-SC</p><p class="pdf-element">Supervised SoTAb</p><p class="pdf-element">HotpotQA Fever
-(Acc)</p><p class="pdf-element">(EM)</p><p class="pdf-element">28.7
+ReAct→ CoT-SC</p><p class="pdf-element" data-original-size="8.31">Supervised SoTAb</p><p class="pdf-element" data-original-size="8.31">HotpotQA Fever
+(Acc)</p><p class="pdf-element" data-original-size="8.31">(EM)</p><p class="pdf-element" data-original-size="8.31">28.7
 29.4
-33.4</p><p class="pdf-element">25.7
+33.4</p><p class="pdf-element" data-original-size="8.31">25.7
 27.4
 34.2
-35.1</p><p class="pdf-element">67.5</p><p class="pdf-element">57.1
+35.1</p><p class="pdf-element" data-original-size="8.31">67.5</p><p class="pdf-element" data-original-size="8.31">57.1
 56.3
-60.4</p><p class="pdf-element">58.9
+60.4</p><p class="pdf-element" data-original-size="8.31">58.9
 60.9
 64.6
-62.0</p><p class="pdf-element">89.5</p><p class="pdf-element">Table 1: PaLM-540B prompting results on
-HotpotQA and Fever.</p><p class="pdf-element">a</p><p class="pdf-element">HotpotQA EM is 27.1, 28.9, 33.8 for Standard, CoT,</p><p class="pdf-element">CoT-SC in Wang et al. (2022b).</p><p class="pdf-element">b</p><p class="pdf-element">(Zhu et al., 2021; Lewis et al., 2020)</p><p class="pdf-element">Figure 2: PaLM-540B prompting results with respect to
-number of CoT-SC samples used.</p><p class="pdf-element">search reformulation (“maybe I can search/look up x instead”), and synthesize the ﬁnal answer (“...so
-the answer is x”). See Appendix C for more details.</p><p class="pdf-element">Baselines We systematically ablate ReAct trajectories to build prompts for multiple baselines (with
+62.0</p><p class="pdf-element" data-original-size="8.31">89.5</p><p class="pdf-element" data-original-size="9.96">Table 1: PaLM-540B prompting results on
+HotpotQA and Fever.</p><p class="pdf-element" data-original-size="5.98">a</p><p class="pdf-element" data-original-size="5.98">HotpotQA EM is 27.1, 28.9, 33.8 for Standard, CoT,</p><p class="pdf-element" data-original-size="5.98">CoT-SC in Wang et al. (2022b).</p><p class="pdf-element" data-original-size="5.98">b</p><p class="pdf-element" data-original-size="5.98">(Zhu et al., 2021; Lewis et al., 2020)</p><p class="pdf-element" data-original-size="9.96">Figure 2: PaLM-540B prompting results with respect to
+number of CoT-SC samples used.</p><p class="pdf-element" data-original-size="9.96">search reformulation (“maybe I can search/look up x instead”), and synthesize the ﬁnal answer (“...so
+the answer is x”). See Appendix C for more details.</p><p class="pdf-element" data-original-size="9.96">Baselines We systematically ablate ReAct trajectories to build prompts for multiple baselines (with
 formats as Figure 1(1a-1c)): (a) Standard prompting (Standard), which removes all thoughts,
 actions, observations in ReAct trajectories. (b) Chain-of-thought prompting (CoT) (Wei et al.,
 2022), which removes actions and observations and serve as a reasoning-only baseline. We also
@@ -206,7 +206,7 @@ with decoding temperature 0.7 during inference and adopting the majority answer,
 consistently boost performance over CoT. (c) Acting-only prompt (Act), which removes thoughts
 in ReAct trajectories, loosely resembling how WebGPT (Nakano et al., 2021) interacts with the
 Internet to answer questions, though it operates on a different task and action space, and uses imitation
-and reinforcement learning instead of prompting.</p><p class="pdf-element">Combining Internal and External Knowledge As will be detail in Section 3.3, we observe that
+and reinforcement learning instead of prompting.</p><p class="pdf-element" data-original-size="9.96">Combining Internal and External Knowledge As will be detail in Section 3.3, we observe that
 the problem solving process demonstrated by ReAct is more factual and grounded, whereas CoT
 is more accurate in formulating reasoning structure but can easily suffer from hallucinated facts
 or thoughts. We therefore propose to incorporate ReAct and CoT-SC, and let the model decide
@@ -214,60 +214,60 @@ when to switch to the other method based on the following heuristics: A) ReAct �
 ReAct fails to return an answer within given steps, back off to CoT-SC. We set 7 and 5 steps for
 HotpotQA and FEVER respectively as we ﬁnd more steps will not improve ReAct performance3.
 B) CoT-SC → ReAct: when the majority answer among n CoT-SC samples occurs less than n/2
-times (i.e. internal knowledge might not support the task conﬁdently), back off to ReAct.</p><p class="pdf-element">Finetuning Due to the challenge of manually annotating reasoning traces and actions at scale,
+times (i.e. internal knowledge might not support the task conﬁdently), back off to ReAct.</p><p class="pdf-element" data-original-size="9.96">Finetuning Due to the challenge of manually annotating reasoning traces and actions at scale,
 we consider a bootstraping approach similar to Zelikman et al. (2022), using 3,000 trajectories
 with correct answers generated by ReAct (also for other baselines) to ﬁnetune smaller language
 models (PaLM-8/62B) to decode trajectories (all thoughts, actions, observations) conditioned on
-input questions/claims. More details are in Appendix B.1.</p><p class="pdf-element">3.3 RESULTS AND OBSERVATIONS</p><p class="pdf-element">ReAct outperforms Act consistently Table 1 shows HotpotQA and Fever results using PaLM-
+input questions/claims. More details are in Appendix B.1.</p><p class="pdf-element" data-original-size="9.96">3.3 RESULTS AND OBSERVATIONS</p><p class="pdf-element" data-original-size="9.96">ReAct outperforms Act consistently Table 1 shows HotpotQA and Fever results using PaLM-
 540B as the base model with different prompting methods. We note that ReAct is better than Act
 on both tasks, demonstrating the value of reasoning to guide acting, especially for synthesizing the
 ﬁnal answer, as shown in Figure 1 (1c-d). Fine-tuning results 3 also conﬁrm the beneﬁt of reasoning
-traces for more informed acting.</p><p class="pdf-element">3Of all trajectories with correct ﬁnal answers, those with 7 steps on HotpotQA and 5 steps on FEVER only</p><p class="pdf-element">take up 0.84% and 1.33% respectively.</p><p class="pdf-element">5</p></div></div><div class="pdf-page"><div class="pdf-content"><p class="pdf-element">Published as a conference paper at ICLR 2023</p><p class="pdf-element">Type</p><p class="pdf-element">Deﬁnition</p><p class="pdf-element">ReAct</p><p class="pdf-element">CoT</p><p class="pdf-element">Success</p><p class="pdf-element">Failure</p><p class="pdf-element">True positive
+traces for more informed acting.</p><p class="pdf-element" data-original-size="5.98">3Of all trajectories with correct ﬁnal answers, those with 7 steps on HotpotQA and 5 steps on FEVER only</p><p class="pdf-element" data-original-size="8.97">take up 0.84% and 1.33% respectively.</p><p class="pdf-element" data-original-size="9.96">5</p><p class="pdf-element" data-original-size="9.96">Published as a conference paper at ICLR 2023</p><p class="pdf-element" data-original-size="6.97">Type</p><p class="pdf-element" data-original-size="6.97">Deﬁnition</p><p class="pdf-element" data-original-size="6.97">ReAct</p><p class="pdf-element" data-original-size="6.97">CoT</p><p class="pdf-element" data-original-size="6.97">Success</p><p class="pdf-element" data-original-size="6.97">Failure</p><p class="pdf-element" data-original-size="6.97">True positive
 False positive
 Reasoning error
 Search result error
 Hallucination
-Label ambiguity</p><p class="pdf-element">Correct reasoning trace and facts
+Label ambiguity</p><p class="pdf-element" data-original-size="6.97">Correct reasoning trace and facts
 Hallucinated reasoning trace or facts
 Wrong reasoning trace (including failing to recover from repetitive steps)
 Search return empty or does not contain useful information
 Hallucinated reasoning trace or facts
-Right prediction but did not match the label precisely</p><p class="pdf-element">94%
+Right prediction but did not match the label precisely</p><p class="pdf-element" data-original-size="6.97">94%
 6%
 47%
 23%
 0%
-29%</p><p class="pdf-element">86%
+29%</p><p class="pdf-element" data-original-size="6.97">86%
 14%
 16%
 -
 56%
-28%</p><p class="pdf-element">Table 2: Types of success and failure modes of ReAct and CoT on HotpotQA, as well as their
-percentages in randomly selected examples studied by human.</p><p class="pdf-element">ReAct vs. CoT On the other hand, ReAct outperforms CoT on Fever (60.9 vs. 56.3) and slightly
+28%</p><p class="pdf-element" data-original-size="9.96">Table 2: Types of success and failure modes of ReAct and CoT on HotpotQA, as well as their
+percentages in randomly selected examples studied by human.</p><p class="pdf-element" data-original-size="9.96">ReAct vs. CoT On the other hand, ReAct outperforms CoT on Fever (60.9 vs. 56.3) and slightly
 lags behind CoT on HotpotQA (27.4 vs. 29.4). Fever claims for SUPPORTS/REFUTES might only
 differ by a slight amount (see Appendix D.1), so acting to retrieve accurate and up-to-date knowledge
 is vital. To better understand the behavioral difference between ReAct and CoT on HotpotQA, we
 randomly sampled 50 trajectories with correct and incorrect answers (judged by EM) from ReAct
 and CoT respectively (thus 200 examples in total), and manually labeled their success and failure
-modes in Table 2. Some key observations are as follows:</p><p class="pdf-element">A) Hallucination is a serious problem for CoT, resulting in much higher false positive rate than
+modes in Table 2. Some key observations are as follows:</p><p class="pdf-element" data-original-size="9.96">A) Hallucination is a serious problem for CoT, resulting in much higher false positive rate than
 ReAct (14% vs. 6%) in success mode, and make up its major failure mode (56%). In contrast, the
 problem solving trajectory of ReActis more grounded, fact-driven, and trustworthy, thanks to the
-access of an external knowledge base.</p><p class="pdf-element">B) While interleaving reasoning, action and observation steps improves ReAct’s grounded-
+access of an external knowledge base.</p><p class="pdf-element" data-original-size="9.96">B) While interleaving reasoning, action and observation steps improves ReAct’s grounded-
 ness and trustworthiness, such a structural constraint also reduces its ﬂexibility in formulating
 reasoning steps, leading to more reasoning error rate than CoT. we note that there is one frequent
 error pattern speciﬁc to ReAct, in which the model repetitively generates the previous thoughts and
 actions, and we categorize it as part of “reasoning error” as the model fails to reason about what the
-proper next action to take and jump out of the loop4.</p><p class="pdf-element">C) For ReAct, successfully retrieving informative knowledge via search is critical. Non-
+proper next action to take and jump out of the loop4.</p><p class="pdf-element" data-original-size="9.96">C) For ReAct, successfully retrieving informative knowledge via search is critical. Non-
 informative search, which counts for 23% of the error cases, derails the model reasoning and gives
 it a hard time to recover and reformulate thoughts. This is perhaps an expected trade-off between
-factuality and ﬂexibility, which motivates our proposed strategies of combining two methods.</p><p class="pdf-element">We provide examples for each success and failure modes in Appendix E.1. We also ﬁnd some
-HotpotQA questions may contain outdated answer labels, see Figure 4 for example.</p><p class="pdf-element">ReAct + CoT-SC perform best for prompting LLMs Also shown in Table 1, the best prompting
+factuality and ﬂexibility, which motivates our proposed strategies of combining two methods.</p><p class="pdf-element" data-original-size="9.96">We provide examples for each success and failure modes in Appendix E.1. We also ﬁnd some
+HotpotQA questions may contain outdated answer labels, see Figure 4 for example.</p><p class="pdf-element" data-original-size="9.96">ReAct + CoT-SC perform best for prompting LLMs Also shown in Table 1, the best prompting
 method on HotpotQA and Fever are ReAct → CoT-SC and CoT-SC → ReAct respectively.
 Furthermore, Figure 2 shows how different methods perform with respect to the number of CoT-SC
 samples used. While two ReAct + CoT-SC methods are advantageous at one task each, they both
 signiﬁcantly and consistently outperform CoT-SC across different number of samples, reaching
 CoT-SC performance with 21 samples using merely 3-5 samples. These results indicate the value of
-properly combining model internal knowledge and external knowledge for reasoning tasks.</p><p class="pdf-element">ReAct performs best for ﬁne-tuning Figure 3 shows the scaling effect of prompting/ﬁnetuning
+properly combining model internal knowledge and external knowledge for reasoning tasks.</p><p class="pdf-element" data-original-size="9.96">ReAct performs best for ﬁne-tuning Figure 3 shows the scaling effect of prompting/ﬁnetuning
 four methods (Standard, CoT, Act, ReAct) on HotpotQA. With PaLM-8/62B, prompting ReAct
 performs worst among four methods due to the difﬁculty to learn both reasoning and acting from
 in-context examples. However, when ﬁnetuned with just 3,000 examples, ReAct becomes the best
@@ -278,9 +278,9 @@ methods, and PaLM-62B ﬁnetuned ReAct outperforming all 540B prompting methods.
 facts, and the latter teaches models how to (reason and) act to access information from Wikipedia, a
 more generalizable skill for knowledge reasoning. As all prompting methods are still signiﬁcantly
 far from domain-speciﬁc state-of-the-art approaches (Table 1), we believe ﬁnetuning with more
-human-written data might be a better way to unleash the power of ReAct.</p><p class="pdf-element">4We suspect that this could be due to the sub-optimal greedy decoding procedure, and future work using</p><p class="pdf-element">better decoding (e.g. beam search) might help address this issue.</p><p class="pdf-element">6</p></div></div><div class="pdf-page"><div class="pdf-content"><p class="pdf-element">Published as a conference paper at ICLR 2023</p><p class="pdf-element">Figure 3: Scaling results for prompting and ﬁnetuning on HotPotQA with ReAct (ours) and baselines.</p><p class="pdf-element">4 DECISION MAKING TASKS</p><p class="pdf-element">We also test ReAct on two language-based interactive decision-making tasks, ALFWorld and
+human-written data might be a better way to unleash the power of ReAct.</p><p class="pdf-element" data-original-size="5.98">4We suspect that this could be due to the sub-optimal greedy decoding procedure, and future work using</p><p class="pdf-element" data-original-size="8.97">better decoding (e.g. beam search) might help address this issue.</p><p class="pdf-element" data-original-size="9.96">6</p><p class="pdf-element" data-original-size="9.96">Published as a conference paper at ICLR 2023</p><p class="pdf-element" data-original-size="9.96">Figure 3: Scaling results for prompting and ﬁnetuning on HotPotQA with ReAct (ours) and baselines.</p><p class="pdf-element" data-original-size="11.96">4 DECISION MAKING TASKS</p><p class="pdf-element" data-original-size="9.96">We also test ReAct on two language-based interactive decision-making tasks, ALFWorld and
 WebShop, both of which feature complex environments that require agents to act over long horizons
-with sparse rewards, warranting the need for reasoning to act and explore effectively.</p><p class="pdf-element">ALFWorld ALFWorld (Shridhar et al., 2020b) (Figure 1(2)) is a synthetic text-based game designed
+with sparse rewards, warranting the need for reasoning to act and explore effectively.</p><p class="pdf-element" data-original-size="9.96">ALFWorld ALFWorld (Shridhar et al., 2020b) (Figure 1(2)) is a synthetic text-based game designed
 to align with the embodied ALFRED benchmark (Shridhar et al., 2020a). It includes 6 types of
 tasks in which an agent needs to achieve a high-level goal (e.g. examine paper under desklamp) by
 navigating and interacting with a simulated household via text actions (e.g. go to coffeetable 1, take
@@ -299,7 +299,7 @@ permutation of 2 annotated trajectories from the 3 we annotate. Act prompts are 
 the same trajectories, but without thoughts — since task instances are randomly chosen from the
 training set, it favors neither ReAct nor Act and provides a fair and controlled comparison to test the
 importance of sparse thoughts. For baselines, we use BUTLER (Shridhar et al., 2020b), an imitation
-learning agent trained on 105 expert trajectories for each task type5.</p><p class="pdf-element">WebShop Can ReAct also interact with noisy real-world language environments for practical
+learning agent trained on 105 expert trajectories for each task type5.</p><p class="pdf-element" data-original-size="9.96">WebShop Can ReAct also interact with noisy real-world language environments for practical
 applications? We investigate WebShop (Yao et al., 2022), a recently proposed online shopping
 website environment with 1.18M real-world products and 12k human instructions. Unlike ALFWorld,
 Webshop contains a high variety of structured and unstructured texts (e.g. product titles, descriptions,
@@ -312,73 +312,73 @@ success rate (percentage of episodes where the chosen product satisﬁes all req
 instructions. We formulate Act prompts with actions to search, choose product, choose options,
 and buy, with ReAct prompts additionally reasoning to determine what to explore, when to buy,
 and what products options are relevant to the instruction. See Table 6 for an example prompt, and
-Table 10 for model predictions in the Appendix. We compare to an imitation learning (IL) method</p><p class="pdf-element">5Micheli &amp; Fleuret (2021) ﬁnetuned a GPT-2 model on 3553 task instances and achieved a much improved</p><p class="pdf-element">performance than BUTLER, but it is trained on all task types, thus not included as a baseline.</p><p class="pdf-element">7</p></div></div><div class="pdf-page"><div class="pdf-content"><p class="pdf-element">Published as a conference paper at ICLR 2023</p><p class="pdf-element">Method</p><p class="pdf-element">Pick Clean Heat Cool Look</p><p class="pdf-element">Pick 2 All</p><p class="pdf-element">Method</p><p class="pdf-element">Score</p><p class="pdf-element">SR</p><p class="pdf-element">Act (best of 6)
+Table 10 for model predictions in the Appendix. We compare to an imitation learning (IL) method</p><p class="pdf-element" data-original-size="5.98">5Micheli &amp; Fleuret (2021) ﬁnetuned a GPT-2 model on 3553 task instances and achieved a much improved</p><p class="pdf-element" data-original-size="8.97">performance than BUTLER, but it is trained on all task types, thus not included as a baseline.</p><p class="pdf-element" data-original-size="9.96">7</p><p class="pdf-element" data-original-size="9.96">Published as a conference paper at ICLR 2023</p><p class="pdf-element" data-original-size="8.80">Method</p><p class="pdf-element" data-original-size="8.80">Pick Clean Heat Cool Look</p><p class="pdf-element" data-original-size="8.80">Pick 2 All</p><p class="pdf-element" data-original-size="8.45">Method</p><p class="pdf-element" data-original-size="8.45">Score</p><p class="pdf-element" data-original-size="8.45">SR</p><p class="pdf-element" data-original-size="8.80">Act (best of 6)
 ReAct (avg)
-ReAct (best of 6)</p><p class="pdf-element">ReAct-IM (avg)
-ReAct-IM (best of 6)</p><p class="pdf-element">BUTLERg (best of 8)
-BUTLER (best of 8)</p><p class="pdf-element">88
+ReAct (best of 6)</p><p class="pdf-element" data-original-size="8.80">ReAct-IM (avg)
+ReAct-IM (best of 6)</p><p class="pdf-element" data-original-size="8.80">BUTLERg (best of 8)
+BUTLER (best of 8)</p><p class="pdf-element" data-original-size="8.80">88
 65
-92</p><p class="pdf-element">55
-62</p><p class="pdf-element">33
-46</p><p class="pdf-element">42
+92</p><p class="pdf-element" data-original-size="8.80">55
+62</p><p class="pdf-element" data-original-size="8.80">33
+46</p><p class="pdf-element" data-original-size="8.80">42
 39
-58</p><p class="pdf-element">59
-68</p><p class="pdf-element">26
-39</p><p class="pdf-element">74
+58</p><p class="pdf-element" data-original-size="8.80">59
+68</p><p class="pdf-element" data-original-size="8.80">26
+39</p><p class="pdf-element" data-original-size="8.80">74
 83
-96</p><p class="pdf-element">60
-87</p><p class="pdf-element">70
-74</p><p class="pdf-element">67
+96</p><p class="pdf-element" data-original-size="8.80">60
+87</p><p class="pdf-element" data-original-size="8.80">70
+74</p><p class="pdf-element" data-original-size="8.80">67
 76
-86</p><p class="pdf-element">55
-57</p><p class="pdf-element">76
-100</p><p class="pdf-element">72
+86</p><p class="pdf-element" data-original-size="8.80">55
+57</p><p class="pdf-element" data-original-size="8.80">76
+100</p><p class="pdf-element" data-original-size="8.80">72
 55
-78</p><p class="pdf-element">23
-39</p><p class="pdf-element">17
-22</p><p class="pdf-element">41
+78</p><p class="pdf-element" data-original-size="8.80">23
+39</p><p class="pdf-element" data-original-size="8.80">17
+22</p><p class="pdf-element" data-original-size="8.80">41
 24
-41</p><p class="pdf-element">24
-33</p><p class="pdf-element">12
-24</p><p class="pdf-element">45
+41</p><p class="pdf-element" data-original-size="8.80">24
+33</p><p class="pdf-element" data-original-size="8.80">12
+24</p><p class="pdf-element" data-original-size="8.80">45
 57
-71</p><p class="pdf-element">48
-53</p><p class="pdf-element">22
-37</p><p class="pdf-element">Table 3: AlfWorld task-speciﬁc success rates (%). BUTLER and
+71</p><p class="pdf-element" data-original-size="8.80">48
+53</p><p class="pdf-element" data-original-size="8.80">22
+37</p><p class="pdf-element" data-original-size="9.96">Table 3: AlfWorld task-speciﬁc success rates (%). BUTLER and
 BUTLERg results are from Table 4 of Shridhar et al. (2020b). All
-methods use greedy decoding, except that BUTLER uses beam search.</p><p class="pdf-element">Act
-ReAct</p><p class="pdf-element">IL
-IL+RL</p><p class="pdf-element">Human
-Expert</p><p class="pdf-element">62.3
-66.6</p><p class="pdf-element">59.9
-62.4</p><p class="pdf-element">30.1
-40.0</p><p class="pdf-element">29.1
-28.7</p><p class="pdf-element">82.1</p><p class="pdf-element">59.6</p><p class="pdf-element">Table 4: Score and suc-
+methods use greedy decoding, except that BUTLER uses beam search.</p><p class="pdf-element" data-original-size="8.45">Act
+ReAct</p><p class="pdf-element" data-original-size="8.45">IL
+IL+RL</p><p class="pdf-element" data-original-size="8.45">Human
+Expert</p><p class="pdf-element" data-original-size="8.45">62.3
+66.6</p><p class="pdf-element" data-original-size="8.45">59.9
+62.4</p><p class="pdf-element" data-original-size="8.45">30.1
+40.0</p><p class="pdf-element" data-original-size="8.45">29.1
+28.7</p><p class="pdf-element" data-original-size="8.45">82.1</p><p class="pdf-element" data-original-size="8.45">59.6</p><p class="pdf-element" data-original-size="9.96">Table 4: Score and suc-
 cess rate (SR) on Web-
 shop. IL/IL+RL taken
-from Yao et al. (2022).</p><p class="pdf-element">trained with 1,012 human annotated trajectories, and a imitation + reinforcement learning (IL + RL)
-method additionally trained with 10,587 training instructions.</p><p class="pdf-element">Results ReAct outperforms Act on both ALFWorld (Table 3) and Webshop (Table 4). On
+from Yao et al. (2022).</p><p class="pdf-element" data-original-size="9.96">trained with 1,012 human annotated trajectories, and a imitation + reinforcement learning (IL + RL)
+method additionally trained with 10,587 training instructions.</p><p class="pdf-element" data-original-size="9.96">Results ReAct outperforms Act on both ALFWorld (Table 3) and Webshop (Table 4). On
 ALFWorld, the best ReAct trial achieves an average success rate of 71%, signiﬁcantly outperforming
 the best Act (45%) and BUTLER (37%) trials. In fact, even the worse ReAct trial (48%) beats
 the best trial of both methods. Moreover, the advantage of ReAct over Act is consistent across
 six controlled trials, with relative performance gain ranging from 33% to 90% and averaging 62%.
 Qualitatively, we saw that, without any thoughts at all, Act fails to correctly decompose goals
 into smaller subgoals, or loses track of the current state of the environment. Example trajectories
-comparing ReAct and Act can be found in Appendix D.2.1 and Appendix D.2.2.</p><p class="pdf-element">On Webshop, one-shot Act prompting already performs on par with IL and IL+RL methods. With
+comparing ReAct and Act can be found in Appendix D.2.1 and Appendix D.2.2.</p><p class="pdf-element" data-original-size="9.96">On Webshop, one-shot Act prompting already performs on par with IL and IL+RL methods. With
 additional sparse reasoning, ReAct achieves signiﬁcantly better performance, with an absolute 10%
 improvement over the previous best success rate. By checking examples, we ﬁnd that ReAct is more
 likely to identify instruction-relevant products and options by reasoning to bridge the gap between
 noisy observations and actions (e.g. “For ‘space-saving ottoman bench for living room’, the item
 has options ‘39x18x18inch’ and ‘blue’ and seems good to buy.”). However, existing methods are
 still far from the performance of expert humans (Table 4), who perform signiﬁcantly more product
-explorations and query re-formulations that are still challenging for prompting-based methods.</p><p class="pdf-element">On the value of internal reasoning vs. external feedback To our knowledge, ReAct is the ﬁrst
+explorations and query re-formulations that are still challenging for prompting-based methods.</p><p class="pdf-element" data-original-size="9.96">On the value of internal reasoning vs. external feedback To our knowledge, ReAct is the ﬁrst
 demonstration of combined reasoning and action using an LLM applied to an interactive environment
 within a closed-loop system. Perhaps the closest prior work is Inner Monologue (IM), from Huang
 et al. (2022b), in which actions from an embodied agent are motivated by an eponymous “inner
 monologue”. However, IM’s “inner monologue” is limited to observations of the environment
 state and what needs to be completed by the agent for the goal to be satisﬁed. In contrast, the
 reasoning traces in ReAct for decision making is ﬂexible and sparse, allowing diverse reasoning
-types (see Section 2) to be induced for different tasks.</p><p class="pdf-element">To demonstrate the differences between ReAct and IM, and to highlight the importance of internal
+types (see Section 2) to be induced for different tasks.</p><p class="pdf-element" data-original-size="9.96">To demonstrate the differences between ReAct and IM, and to highlight the importance of internal
 reasoning vs. simple reactions to external feedback, we ran an ablation experiment using a thought
 pattern composed of IM-like dense external feedback. As can be seen in Table 3, ReAct substantially
 outperforms IM-style prompting (ReAct-IM) (71 vs. 53 overall success rate), with consistent
@@ -388,7 +388,7 @@ level goal decomposition. Additionally, many ReAct-IM trajectories struggled to 
 an item would likely be within the ALFWorld environment, due to a lack of commonsense reasoning.
 Both shortcomings can be addressed in the ReAct paradigm. More details about ReAct-IM is in
 Appendix B.2. An example prompt for ReAct-IM can be found in Appendix C.4, and an example
-trajectory in Appendix D.2.3.</p><p class="pdf-element">8</p></div></div><div class="pdf-page"><div class="pdf-content"><p class="pdf-element">Published as a conference paper at ICLR 2023</p><p class="pdf-element">5 RELATED WORK</p><p class="pdf-element">Language model for reasoning Perhaps the most well-known work of using LLMs for reasoning
+trajectory in Appendix D.2.3.</p><p class="pdf-element" data-original-size="9.96">8</p><p class="pdf-element" data-original-size="9.96">Published as a conference paper at ICLR 2023</p><p class="pdf-element" data-original-size="11.96">5 RELATED WORK</p><p class="pdf-element" data-original-size="9.96">Language model for reasoning Perhaps the most well-known work of using LLMs for reasoning
 is Chain-of-Thought (CoT) (Wei et al., 2022), which reveals the ability of LLMs to formulate their
 own “thinking procedure” for problem solving. Several follow-up works have since been performed,
 including least-to-most prompting for solving complicated tasks (Zhou et al., 2022), zero-shot-
@@ -404,7 +404,7 @@ LM respectively. Similar approaches like Scratchpad (Nye et al., 2021), which �
 intermediate computation steps, also demonstrate improvement on multi-step computation problems.
 In contrast to these methods, ReAct performs more than just isolated, ﬁxed reasoning, and integrates
 model actions and their corresponding observations into a coherent stream of inputs for the model to
-reason more accurately and tackle tasks beyond reasoning (e.g. interactive decision making).</p><p class="pdf-element">Language model for decision making The strong capability of LLMs has enabled them to perform
+reason more accurately and tackle tasks beyond reasoning (e.g. interactive decision making).</p><p class="pdf-element" data-original-size="9.96">Language model for decision making The strong capability of LLMs has enabled them to perform
 tasks beyond language generation, and it is becoming more popular to take advantage of LLMs as a
 policy model for decision making, especially in interactive environments. WebGPT (Nakano et al.,
 2021) uses an LM to interact with web browsers, navigate through web pages, and infer answers to
@@ -415,7 +415,7 @@ and Sparrow (Glaese et al., 2022) and task-oriented dialogue systems like Simple
 et al., 2020) also train LMs to make decision about API calls. Unlike ReAct, they do not explicitly
 consider the reasoning procedure either, and also relies on expensive datasets and human feedback
 collections for policy learning. In contrast, ReAct learns a policy in a much cheaper way, since the
-decision making process only requires language description of the reasoning procedure.6</p><p class="pdf-element">LLMS have also been increasingly employed in interactive and embodied environments for planning
+decision making process only requires language description of the reasoning procedure.6</p><p class="pdf-element" data-original-size="9.96">LLMS have also been increasingly employed in interactive and embodied environments for planning
 and decision making. Perhaps most relevant to ReAct in this respect are SayCan (Ahn et al., 2022)
 and Inner Monologue (Huang et al., 2022b), which use LLMs for robotic action planning and decision
 making. In SayCan, LLMs were prompted to directly predict possible actions a robot can take, which
@@ -429,21 +429,21 @@ making has been shown to be successful under other settings (Abramson et al., 20
 et al., 2021; Huang et al., 2022a; Li et al., 2022). It is becoming more evident that with the help of
 LLMs, language as a fundamental cognitive mechanism will play a critical role in interaction and
 decision making. What is more, progress in LLMs has also inspired the development of versatile and
-generalist agents like Reed et al. (2022).</p><p class="pdf-element">6 CONCLUSION</p><p class="pdf-element">We have proposed ReAct – a simple yet effective method for synergizing reasoning and acting in
+generalist agents like Reed et al. (2022).</p><p class="pdf-element" data-original-size="11.96">6 CONCLUSION</p><p class="pdf-element" data-original-size="9.96">We have proposed ReAct – a simple yet effective method for synergizing reasoning and acting in
 large language models. Through a diverse set of experiments on multi-hop question-answering, fact
 checking, and interactive decision-making tasks, we show that ReAct leads to superior performance
 with interpretable decision traces. Despite the simplicity of our method, complex tasks with large
 action spaces require more demonstrations to learn well, which unfortunately can easily go beyond
-the input length limit of in-context learning. We explore the ﬁne-tuning approach on HotpotQA</p><p class="pdf-element">6Human feedback can also be incorporated in a complementary manner but we leave it for future work.</p><p class="pdf-element">9</p></div></div><div class="pdf-page"><div class="pdf-content"><p class="pdf-element">Published as a conference paper at ICLR 2023</p><p class="pdf-element">with initial promising results, but learning from more high-quality human annotations will be the
+the input length limit of in-context learning. We explore the ﬁne-tuning approach on HotpotQA</p><p class="pdf-element" data-original-size="5.98">6Human feedback can also be incorporated in a complementary manner but we leave it for future work.</p><p class="pdf-element" data-original-size="9.96">9</p><p class="pdf-element" data-original-size="9.96">Published as a conference paper at ICLR 2023</p><p class="pdf-element" data-original-size="9.96">with initial promising results, but learning from more high-quality human annotations will be the
 desiderata to further improve the performance. Scaling up ReAct with multi-task training and
 combining it with complementary paradigms like reinforcement learning could result in stronger
-agents that further unlock the potential of LLMs for more applications.</p><p class="pdf-element">ACKNOWLEDGMENTS</p><p class="pdf-element">We thank the support and feedback of many people from Google Brain team and Princeton NLP
+agents that further unlock the potential of LLMs for more applications.</p><p class="pdf-element" data-original-size="9.96">ACKNOWLEDGMENTS</p><p class="pdf-element" data-original-size="9.96">We thank the support and feedback of many people from Google Brain team and Princeton NLP
 Group. This work was supported in part by the National Science Foundation under Grant No.
 2107048. Any opinions, ﬁndings, and conclusions or recommendations expressed in this material are
-those of the author(s) and do not necessarily reﬂect the views of the National Science Foundation.</p><p class="pdf-element">REPRODUCIBILITY STATEMENT</p><p class="pdf-element">Our main experiments are done on PaLM (Chowdhery et al., 2022), which is not an openly accessible
+those of the author(s) and do not necessarily reﬂect the views of the National Science Foundation.</p><p class="pdf-element" data-original-size="9.96">REPRODUCIBILITY STATEMENT</p><p class="pdf-element" data-original-size="9.96">Our main experiments are done on PaLM (Chowdhery et al., 2022), which is not an openly accessible
 model yet. To increase reproducibility, we have included all used prompts in Appendix C, additional
 experiments using GPT-3 (Brown et al., 2020) in Appendix A.1, and associated GPT-3 ReAct
-prompting code at https://anonymous.4open.science/r/ReAct-2268/.</p><p class="pdf-element">ETHICS STATEMENT</p><p class="pdf-element">ReAct prompts large language models to generate more human interpretable, diagnosable, and
+prompting code at https://anonymous.4open.science/r/ReAct-2268/.</p><p class="pdf-element" data-original-size="9.96">ETHICS STATEMENT</p><p class="pdf-element" data-original-size="9.96">ReAct prompts large language models to generate more human interpretable, diagnosable, and
 controllable task-solving trajectories than previous methods. However, hooking up a large language
 model with an action space to interact with external environments (e.g. the web, physical environ-
 ments) has potential dangers, e.g. looking up inappropriate or private information, or taking harmful
@@ -451,12 +451,12 @@ actions in an environment. Our experiments minimize such risks by limiting the i
 speciﬁc websites (Wikipedia or WebShop) that are free of private information, without any dangerous
 actions in the action space design (i.e. models cannot really buy products on WebShop the research
 benchmark, or edit Wikipedia). We believe researchers should be aware of such risks before designing
-more extensive experiments in the future.</p><p class="pdf-element">REFERENCES</p><p class="pdf-element">Josh Abramson, Arun Ahuja, Iain Barr, Arthur Brussee, Federico Carnevale, Mary Cassin, Rachita
+more extensive experiments in the future.</p><p class="pdf-element" data-original-size="11.96">REFERENCES</p><p class="pdf-element" data-original-size="9.96">Josh Abramson, Arun Ahuja, Iain Barr, Arthur Brussee, Federico Carnevale, Mary Cassin, Rachita
 Chhaparia, Stephen Clark, Bogdan Damoc, Andrew Dudzik, Petko Georgiev, Aurelia Guy, Tim
 Harley, Felix Hill, Alden Hung, Zachary Kenton, Jessica Landon, Timothy Lillicrap, Kory Mathew-
 son, Soˇna Mokrá, Alistair Muldal, Adam Santoro, Nikolay Savinov, Vikrant Varma, Greg Wayne,
 Duncan Williams, Nathaniel Wong, Chen Yan, and Rui Zhu. Imitating interactive intelligence,
-2020. URL https://arxiv.org/abs/2012.05672.</p><p class="pdf-element">Michael Ahn, Anthony Brohan, Noah Brown, Yevgen Chebotar, Omar Cortes, Byron David, Chelsea
+2020. URL https://arxiv.org/abs/2012.05672.</p><p class="pdf-element" data-original-size="9.96">Michael Ahn, Anthony Brohan, Noah Brown, Yevgen Chebotar, Omar Cortes, Byron David, Chelsea
 Finn, Chuyuan Fu, Keerthana Gopalakrishnan, Karol Hausman, Alex Herzog, Daniel Ho, Jasmine
 Hsu, Julian Ibarz, Brian Ichter, Alex Irpan, Eric Jang, Rosario Jauregui Ruano, Kyle Jeffrey, Sally
 Jesmonth, Nikhil J Joshi, Ryan Julian, Dmitry Kalashnikov, Yuheng Kuang, Kuang-Huei Lee,
@@ -464,18 +464,18 @@ Sergey Levine, Yao Lu, Linda Luu, Carolina Parada, Peter Pastor, Jornell Quiamba
 Rao, Jarek Rettinghouse, Diego Reyes, Pierre Sermanet, Nicolas Sievers, Clayton Tan, Alexander
 Toshev, Vincent Vanhoucke, Fei Xia, Ted Xiao, Peng Xu, Sichun Xu, Mengyuan Yan, and
 Andy Zeng. Do as i can, not as i say: Grounding language in robotic affordances, 2022. URL
-https://arxiv.org/abs/2204.01691.</p><p class="pdf-element">Ben Alderson-Day and Charles Fernyhough.</p><p class="pdf-element">Inner speech: development, cognitive functions,</p><p class="pdf-element">phenomenology, and neurobiology. Psychological bulletin, 141(5):931, 2015.</p><p class="pdf-element">Alan Baddeley. Working memory. Science, 255(5044):556–559, 1992.</p><p class="pdf-element">Tom Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared D Kaplan, Prafulla Dhariwal,
+https://arxiv.org/abs/2204.01691.</p><p class="pdf-element" data-original-size="9.96">Ben Alderson-Day and Charles Fernyhough.</p><p class="pdf-element" data-original-size="9.96">Inner speech: development, cognitive functions,</p><p class="pdf-element" data-original-size="9.96">phenomenology, and neurobiology. Psychological bulletin, 141(5):931, 2015.</p><p class="pdf-element" data-original-size="9.96">Alan Baddeley. Working memory. Science, 255(5044):556–559, 1992.</p><p class="pdf-element" data-original-size="9.96">Tom Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared D Kaplan, Prafulla Dhariwal,
 Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda Askell, et al. Language models are
-few-shot learners. Advances in neural information processing systems, 33:1877–1901, 2020.</p><p class="pdf-element">10</p></div></div><div class="pdf-page"><div class="pdf-content"><p class="pdf-element">Published as a conference paper at ICLR 2023</p><p class="pdf-element">Aakanksha Chowdhery, Sharan Narang, Jacob Devlin, Maarten Bosma, Gaurav Mishra, Adam
+few-shot learners. Advances in neural information processing systems, 33:1877–1901, 2020.</p><p class="pdf-element" data-original-size="9.96">10</p><p class="pdf-element" data-original-size="9.96">Published as a conference paper at ICLR 2023</p><p class="pdf-element" data-original-size="9.96">Aakanksha Chowdhery, Sharan Narang, Jacob Devlin, Maarten Bosma, Gaurav Mishra, Adam
 Roberts, Paul Barham, Hyung Won Chung, Charles Sutton, Sebastian Gehrmann, et al. Palm:
-Scaling language modeling with pathways. arXiv preprint arXiv:2204.02311, 2022.</p><p class="pdf-element">Antonia Creswell and Murray Shanahan. Faithful reasoning using large language models, 2022. URL</p><p class="pdf-element">https://arxiv.org/abs/2208.14271.</p><p class="pdf-element">Antonia Creswell, Murray Shanahan, and Irina Higgins. Selection-inference: Exploiting large
+Scaling language modeling with pathways. arXiv preprint arXiv:2204.02311, 2022.</p><p class="pdf-element" data-original-size="9.96">Antonia Creswell and Murray Shanahan. Faithful reasoning using large language models, 2022. URL</p><p class="pdf-element" data-original-size="9.96">https://arxiv.org/abs/2208.14271.</p><p class="pdf-element" data-original-size="9.96">Antonia Creswell, Murray Shanahan, and Irina Higgins. Selection-inference: Exploiting large
 language models for interpretable logical reasoning, 2022. URL https://arxiv.org/abs/
-2205.09712.</p><p class="pdf-element">Angela Fan, Yacine Jernite, Ethan Perez, David Grangier, Jason Weston, and Michael Auli. ELI5:
+2205.09712.</p><p class="pdf-element" data-original-size="9.96">Angela Fan, Yacine Jernite, Ethan Perez, David Grangier, Jason Weston, and Michael Auli. ELI5:
 Long form question answering. In Proceedings of the 57th Annual Meeting of the Association
 for Computational Linguistics, pp. 3558–3567, Florence, Italy, July 2019. Association for Com-
 putational Linguistics. doi: 10.18653/v1/P19-1346. URL https://aclanthology.org/
-P19-1346.</p><p class="pdf-element">Charles Fernyhough. Vygotsky, luria, and the social brain. Self and social regulation: Social
-interaction and the development of social understanding and executive functions, pp. 56–79, 2010.</p><p class="pdf-element">Amelia Glaese, Nat McAleese, Maja Trebacz, John Aslanides, Vlad Firoiu, Timo Ewalds, Mari-
+P19-1346.</p><p class="pdf-element" data-original-size="9.96">Charles Fernyhough. Vygotsky, luria, and the social brain. Self and social regulation: Social
+interaction and the development of social understanding and executive functions, pp. 56–79, 2010.</p><p class="pdf-element" data-original-size="9.96">Amelia Glaese, Nat McAleese, Maja Trebacz, John Aslanides, Vlad Firoiu, Timo Ewalds, Mari-
 beth Rauh, Laura Weidinger, Martin Chadwick, Phoebe Thacker, Lucy Campbell-Gillingham,
 Jonathan Uesato, Po-Sen Huang, Ramona Comanescu, Fan Yang, Abigail See, Sumanth
 Dathathri, Rory Greig, Charlie Chen, Doug Fritz, Jaume Sanchez Elias, Richard Green,
@@ -484,69 +484,69 @@ William Isaac, John Mellor, Demis Hassabis, Koray Kavukcuoglu, Lisa Anne Hendric
 Geoffrey Irving.
 Improving alignment of dialogue agents via targeted human judgements,
 2022. URL https://storage.googleapis.com/deepmind-media/DeepMind.
-com/Authors-Notes/sparrow/sparrow-final.pdf.</p><p class="pdf-element">Ehsan Hosseini-Asl, Bryan McCann, Chien-Sheng Wu, Semih Yavuz, and Richard Socher. A simple
+com/Authors-Notes/sparrow/sparrow-final.pdf.</p><p class="pdf-element" data-original-size="9.96">Ehsan Hosseini-Asl, Bryan McCann, Chien-Sheng Wu, Semih Yavuz, and Richard Socher. A simple
 language model for task-oriented dialogue. Advances in Neural Information Processing Systems,
-33:20179–20191, 2020.</p><p class="pdf-element">Wenlong Huang, Pieter Abbeel, Deepak Pathak, and Igor Mordatch. Language models as zero-shot
+33:20179–20191, 2020.</p><p class="pdf-element" data-original-size="9.96">Wenlong Huang, Pieter Abbeel, Deepak Pathak, and Igor Mordatch. Language models as zero-shot
 planners: Extracting actionable knowledge for embodied agents. arXiv preprint arXiv:2201.07207,
-2022a.</p><p class="pdf-element">Wenlong Huang, Fei Xia, Ted Xiao, Harris Chan, Jacky Liang, Pete Florence, Andy Zeng, Jonathan
+2022a.</p><p class="pdf-element" data-original-size="9.96">Wenlong Huang, Fei Xia, Ted Xiao, Harris Chan, Jacky Liang, Pete Florence, Andy Zeng, Jonathan
 Tompson, Igor Mordatch, Yevgen Chebotar, et al. Inner monologue: Embodied reasoning through
-planning with language models. arXiv preprint arXiv:2207.05608, 2022b.</p><p class="pdf-element">Siddharth Karamcheti, Megha Srivastava, Percy Liang, and Dorsa Sadigh. Lila: Language-informed
+planning with language models. arXiv preprint arXiv:2207.05608, 2022b.</p><p class="pdf-element" data-original-size="9.96">Siddharth Karamcheti, Megha Srivastava, Percy Liang, and Dorsa Sadigh. Lila: Language-informed
 latent actions. In CoRL, pp. 1379–1390, 2021. URL https://proceedings.mlr.press/
-v164/karamcheti22a.html.</p><p class="pdf-element">Takeshi Kojima, Shixiang Shane Gu, Machel Reid, Yutaka Matsuo, and Yusuke Iwasawa. Large</p><p class="pdf-element">language models are zero-shot reasoners. arXiv preprint arXiv:2205.11916, 2022.</p><p class="pdf-element">Angeliki Lazaridou, Elena Gribovskaya, Wojciech Stokowiec, and Nikolai Grigorev.</p><p class="pdf-element">Internet-
+v164/karamcheti22a.html.</p><p class="pdf-element" data-original-size="9.96">Takeshi Kojima, Shixiang Shane Gu, Machel Reid, Yutaka Matsuo, and Yusuke Iwasawa. Large</p><p class="pdf-element" data-original-size="9.96">language models are zero-shot reasoners. arXiv preprint arXiv:2205.11916, 2022.</p><p class="pdf-element" data-original-size="9.96">Angeliki Lazaridou, Elena Gribovskaya, Wojciech Stokowiec, and Nikolai Grigorev.</p><p class="pdf-element" data-original-size="9.96">Internet-
 augmented language models through few-shot prompting for open-domain question answering.
-arXiv preprint arXiv:2203.05115, 2022.</p><p class="pdf-element">Patrick Lewis, Ethan Perez, Aleksandra Piktus, Fabio Petroni, Vladimir Karpukhin, Naman Goyal,
+arXiv preprint arXiv:2203.05115, 2022.</p><p class="pdf-element" data-original-size="9.96">Patrick Lewis, Ethan Perez, Aleksandra Piktus, Fabio Petroni, Vladimir Karpukhin, Naman Goyal,
 Heinrich Küttler, Mike Lewis, Wen-tau Yih, Tim Rocktäschel, et al. Retrieval-augmented genera-
 tion for knowledge-intensive nlp tasks. Advances in Neural Information Processing Systems, 33:
-9459–9474, 2020.</p><p class="pdf-element">Shuang Li, Xavier Puig, Chris Paxton, Yilun Du, Clinton Wang, Linxi Fan, Tao Chen, De-An
+9459–9474, 2020.</p><p class="pdf-element" data-original-size="9.96">Shuang Li, Xavier Puig, Chris Paxton, Yilun Du, Clinton Wang, Linxi Fan, Tao Chen, De-An
 Huang, Ekin Akyürek, Anima Anandkumar, Jacob Andreas, Igor Mordatch, Antonio Torralba,
 and Yuke Zhu. Pre-trained language models for interactive decision-making, 2022. URL https:
-//arxiv.org/abs/2202.01771.</p><p class="pdf-element">11</p></div></div><div class="pdf-page"><div class="pdf-content"><p class="pdf-element">Published as a conference paper at ICLR 2023</p><p class="pdf-element">Aleksandr Romanovich Luria. Ls vygotsky and the problem of localization of functions. Neuropsy-</p><p class="pdf-element">chologia, 3(4):387–392, 1965.</p><p class="pdf-element">Aman Madaan and Amir Yazdanbakhsh. Text and patterns: For effective chain of thought, it takes</p><p class="pdf-element">two to tango, 2022. URL https://arxiv.org/abs/2209.07686.</p><p class="pdf-element">Vincent Micheli and François Fleuret. Language models are few-shot butlers. arXiv preprint</p><p class="pdf-element">arXiv:2104.07972, 2021.</p><p class="pdf-element">Reiichiro Nakano, Jacob Hilton, Suchir Balaji, Jeff Wu, Long Ouyang, Christina Kim, Christopher
+//arxiv.org/abs/2202.01771.</p><p class="pdf-element" data-original-size="9.96">11</p><p class="pdf-element" data-original-size="9.96">Published as a conference paper at ICLR 2023</p><p class="pdf-element" data-original-size="9.96">Aleksandr Romanovich Luria. Ls vygotsky and the problem of localization of functions. Neuropsy-</p><p class="pdf-element" data-original-size="9.96">chologia, 3(4):387–392, 1965.</p><p class="pdf-element" data-original-size="9.96">Aman Madaan and Amir Yazdanbakhsh. Text and patterns: For effective chain of thought, it takes</p><p class="pdf-element" data-original-size="9.96">two to tango, 2022. URL https://arxiv.org/abs/2209.07686.</p><p class="pdf-element" data-original-size="9.96">Vincent Micheli and François Fleuret. Language models are few-shot butlers. arXiv preprint</p><p class="pdf-element" data-original-size="9.96">arXiv:2104.07972, 2021.</p><p class="pdf-element" data-original-size="9.96">Reiichiro Nakano, Jacob Hilton, Suchir Balaji, Jeff Wu, Long Ouyang, Christina Kim, Christopher
 Hesse, Shantanu Jain, Vineet Kosaraju, William Saunders, Xu Jiang, Karl Cobbe, Tyna Eloundou,
 Gretchen Krueger, Kevin Button, Matthew Knight, Benjamin Chess, and John Schulman. Webgpt:
 Browser-assisted question-answering with human feedback, 2021. URL https://arxiv.
-org/abs/2112.09332.</p><p class="pdf-element">Maxwell Nye, Anders Johan Andreassen, Guy Gur-Ari, Henryk Michalewski, Jacob Austin, David
+org/abs/2112.09332.</p><p class="pdf-element" data-original-size="9.96">Maxwell Nye, Anders Johan Andreassen, Guy Gur-Ari, Henryk Michalewski, Jacob Austin, David
 Bieber, David Dohan, Aitor Lewkowycz, Maarten Bosma, David Luan, Charles Sutton, and
 Augustus Odena. Show your work: Scratchpads for intermediate computation with language
-models, 2021. URL https://arxiv.org/abs/2112.00114.</p><p class="pdf-element">Scott Reed, Konrad Zolna, Emilio Parisotto, Sergio Gomez Colmenarejo, Alexander Novikov,
+models, 2021. URL https://arxiv.org/abs/2112.00114.</p><p class="pdf-element" data-original-size="9.96">Scott Reed, Konrad Zolna, Emilio Parisotto, Sergio Gomez Colmenarejo, Alexander Novikov,
 Gabriel Barth-Maron, Mai Gimenez, Yury Sulsky, Jackie Kay, Jost Tobias Springenberg, Tom
 Eccles, Jake Bruce, Ali Razavi, Ashley Edwards, Nicolas Heess, Yutian Chen, Raia Hadsell,
 Oriol Vinyals, Mahyar Bordbar, and Nando de Freitas. A generalist agent, 2022. URL https:
-//arxiv.org/abs/2205.06175.</p><p class="pdf-element">Mohit Shridhar, Jesse Thomason, Daniel Gordon, Yonatan Bisk, Winson Han, Roozbeh Mottaghi,
+//arxiv.org/abs/2205.06175.</p><p class="pdf-element" data-original-size="9.96">Mohit Shridhar, Jesse Thomason, Daniel Gordon, Yonatan Bisk, Winson Han, Roozbeh Mottaghi,
 Luke Zettlemoyer, and Dieter Fox. Alfred: A benchmark for interpreting grounded instructions
 for everyday tasks. In Proceedings of the IEEE/CVF conference on computer vision and pattern
-recognition, pp. 10740–10749, 2020a.</p><p class="pdf-element">Mohit Shridhar, Xingdi Yuan, Marc-Alexandre Côté, Yonatan Bisk, Adam Trischler, and Matthew
+recognition, pp. 10740–10749, 2020a.</p><p class="pdf-element" data-original-size="9.96">Mohit Shridhar, Xingdi Yuan, Marc-Alexandre Côté, Yonatan Bisk, Adam Trischler, and Matthew
 Hausknecht. Alfworld: Aligning text and embodied environments for interactive learning. arXiv
-preprint arXiv:2010.03768, 2020b.</p><p class="pdf-element">Kurt Shuster, Mojtaba Komeili, Leonard Adolphs, Stephen Roller, Arthur Szlam, and Jason Weston.
+preprint arXiv:2010.03768, 2020b.</p><p class="pdf-element" data-original-size="9.96">Kurt Shuster, Mojtaba Komeili, Leonard Adolphs, Stephen Roller, Arthur Szlam, and Jason Weston.
 Language models that seek for knowledge: Modular search &amp; generation for dialogue and prompt
-completion. arXiv preprint arXiv:2203.13224, 2022a.</p><p class="pdf-element">Kurt Shuster, Jing Xu, Mojtaba Komeili, Da Ju, Eric Michael Smith, Stephen Roller, Megan Ung,
+completion. arXiv preprint arXiv:2203.13224, 2022a.</p><p class="pdf-element" data-original-size="9.96">Kurt Shuster, Jing Xu, Mojtaba Komeili, Da Ju, Eric Michael Smith, Stephen Roller, Megan Ung,
 Moya Chen, Kushal Arora, Joshua Lane, Morteza Behrooz, William Ngan, Spencer Poff, Naman
 Goyal, Arthur Szlam, Y-Lan Boureau, Melanie Kambadur, and Jason Weston. Blenderbot 3:
 a deployed conversational agent that continually learns to responsibly engage, 2022b. URL
-https://arxiv.org/abs/2208.03188.</p><p class="pdf-element">James Thorne, Andreas Vlachos, Christos Christodoulopoulos, and Arpit Mittal. Fever: a large-scale</p><p class="pdf-element">dataset for fact extraction and veriﬁcation. arXiv preprint arXiv:1803.05355, 2018.</p><p class="pdf-element">Lev S Vygotsky. Thinking and speech. The collected works of LS Vygotsky, 1:39–285, 1987.</p><p class="pdf-element">Xuezhi Wang, Jason Wei, Dale Schuurmans, Quoc Le, Ed Chi, Sharan Narang, Aakanksha Chowdh-
+https://arxiv.org/abs/2208.03188.</p><p class="pdf-element" data-original-size="9.96">James Thorne, Andreas Vlachos, Christos Christodoulopoulos, and Arpit Mittal. Fever: a large-scale</p><p class="pdf-element" data-original-size="9.96">dataset for fact extraction and veriﬁcation. arXiv preprint arXiv:1803.05355, 2018.</p><p class="pdf-element" data-original-size="9.96">Lev S Vygotsky. Thinking and speech. The collected works of LS Vygotsky, 1:39–285, 1987.</p><p class="pdf-element" data-original-size="9.96">Xuezhi Wang, Jason Wei, Dale Schuurmans, Quoc Le, Ed Chi, Sharan Narang, Aakanksha Chowdh-
 ery, and Denny Zhou. Self-consistency improves chain of thought reasoning in language models,
-2022a. URL https://arxiv.org/abs/2203.11171.</p><p class="pdf-element">Xuezhi Wang, Jason Wei, Dale Schuurmans, Quoc Le, Ed Chi, and Denny Zhou. Rationale-augmented</p><p class="pdf-element">ensembles in language models. arXiv preprint arXiv:2207.00747, 2022b.</p><p class="pdf-element">Jason Wei, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, Ed Chi, Quoc Le, and Denny
+2022a. URL https://arxiv.org/abs/2203.11171.</p><p class="pdf-element" data-original-size="9.96">Xuezhi Wang, Jason Wei, Dale Schuurmans, Quoc Le, Ed Chi, and Denny Zhou. Rationale-augmented</p><p class="pdf-element" data-original-size="9.96">ensembles in language models. arXiv preprint arXiv:2207.00747, 2022b.</p><p class="pdf-element" data-original-size="9.96">Jason Wei, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, Ed Chi, Quoc Le, and Denny
 Zhou. Chain of thought prompting elicits reasoning in large language models. arXiv preprint
-arXiv:2201.11903, 2022.</p><p class="pdf-element">Zhilin Yang, Peng Qi, Saizheng Zhang, Yoshua Bengio, William W Cohen, Ruslan Salakhutdinov,
+arXiv:2201.11903, 2022.</p><p class="pdf-element" data-original-size="9.96">Zhilin Yang, Peng Qi, Saizheng Zhang, Yoshua Bengio, William W Cohen, Ruslan Salakhutdinov,
 and Christopher D Manning. Hotpotqa: A dataset for diverse, explainable multi-hop question
-answering. arXiv preprint arXiv:1809.09600, 2018.</p><p class="pdf-element">12</p></div></div><div class="pdf-page"><div class="pdf-content"><p class="pdf-element">Published as a conference paper at ICLR 2023</p><p class="pdf-element">Shunyu Yao, Rohan Rao, Matthew Hausknecht, and Karthik Narasimhan. Keep CALM and explore:
+answering. arXiv preprint arXiv:1809.09600, 2018.</p><p class="pdf-element" data-original-size="9.96">12</p><p class="pdf-element" data-original-size="9.96">Published as a conference paper at ICLR 2023</p><p class="pdf-element" data-original-size="9.96">Shunyu Yao, Rohan Rao, Matthew Hausknecht, and Karthik Narasimhan. Keep CALM and explore:
 Language models for action generation in text-based games. In Proceedings of the 2020 Conference
 on Empirical Methods in Natural Language Processing (EMNLP), pp. 8736–8754, Online, Novem-
 ber 2020. Association for Computational Linguistics. doi: 10.18653/v1/2020.emnlp-main.704.
-URL https://aclanthology.org/2020.emnlp-main.704.</p><p class="pdf-element">Shunyu Yao, Howard Chen, John Yang, and Karthik Narasimhan. Webshop: Towards scalable
+URL https://aclanthology.org/2020.emnlp-main.704.</p><p class="pdf-element" data-original-size="9.96">Shunyu Yao, Howard Chen, John Yang, and Karthik Narasimhan. Webshop: Towards scalable
 real-world web interaction with grounded language agents. arXiv preprint arXiv:2207.01206,
-2022.</p><p class="pdf-element">Eric Zelikman, Yuhuai Wu, Jesse Mu, and Noah D. Goodman. Star: Bootstrapping reasoning with</p><p class="pdf-element">reasoning, 2022. URL https://arxiv.org/abs/2203.14465.</p><p class="pdf-element">Denny Zhou, Nathanael Schärli, Le Hou, Jason Wei, Nathan Scales, Xuezhi Wang, Dale Schuurmans,
+2022.</p><p class="pdf-element" data-original-size="9.96">Eric Zelikman, Yuhuai Wu, Jesse Mu, and Noah D. Goodman. Star: Bootstrapping reasoning with</p><p class="pdf-element" data-original-size="9.96">reasoning, 2022. URL https://arxiv.org/abs/2203.14465.</p><p class="pdf-element" data-original-size="9.96">Denny Zhou, Nathanael Schärli, Le Hou, Jason Wei, Nathan Scales, Xuezhi Wang, Dale Schuurmans,
 Olivier Bousquet, Quoc Le, and Ed Chi. Least-to-most prompting enables complex reasoning in
-large language models, 2022. URL https://arxiv.org/abs/2205.10625.</p><p class="pdf-element">Yunchang Zhu, Liang Pang, Yanyan Lan, Huawei Shen, and Xueqi Cheng. Adaptive information</p><p class="pdf-element">seeking for open-domain question answering. arXiv preprint arXiv:2109.06747, 2021.</p><p class="pdf-element">13</p></div></div><div class="pdf-page"><div class="pdf-content"><p class="pdf-element">Published as a conference paper at ICLR 2023</p><p class="pdf-element">A ADDITIONAL RESULTS</p><p class="pdf-element">A.1 GPT-3 EXPERIMENTS</p><p class="pdf-element">PaLM-540B GPT-3</p><p class="pdf-element">HotpotQA (exact match)
-ALFWorld (success rate %)</p><p class="pdf-element">29.4
-70.9</p><p class="pdf-element">30.8
-78.4</p><p class="pdf-element">Table 5: ReAct prompting results using PaLM-540B vs. GPT-3 (text-davinci-002, greedy decoding).
+large language models, 2022. URL https://arxiv.org/abs/2205.10625.</p><p class="pdf-element" data-original-size="9.96">Yunchang Zhu, Liang Pang, Yanyan Lan, Huawei Shen, and Xueqi Cheng. Adaptive information</p><p class="pdf-element" data-original-size="9.96">seeking for open-domain question answering. arXiv preprint arXiv:2109.06747, 2021.</p><p class="pdf-element" data-original-size="9.96">13</p><p class="pdf-element" data-original-size="9.96">Published as a conference paper at ICLR 2023</p><p class="pdf-element" data-original-size="11.96">A ADDITIONAL RESULTS</p><p class="pdf-element" data-original-size="9.96">A.1 GPT-3 EXPERIMENTS</p><p class="pdf-element" data-original-size="9.96">PaLM-540B GPT-3</p><p class="pdf-element" data-original-size="9.96">HotpotQA (exact match)
+ALFWorld (success rate %)</p><p class="pdf-element" data-original-size="9.96">29.4
+70.9</p><p class="pdf-element" data-original-size="9.96">30.8
+78.4</p><p class="pdf-element" data-original-size="9.96">Table 5: ReAct prompting results using PaLM-540B vs. GPT-3 (text-davinci-002, greedy decoding).
 On HotpotQA, we randomly sample a subset of 500 validation questions. On ALFWorld, we use all
-134 unseen validation task instances, and use the best prompt set according to PaLM-540B.</p><p class="pdf-element">We run additional GPT-3 (Brown et al., 2020) experiments to conﬁrm ReAct prompting performance
+134 unseen validation task instances, and use the best prompt set according to PaLM-540B.</p><p class="pdf-element" data-original-size="9.96">We run additional GPT-3 (Brown et al., 2020) experiments to conﬁrm ReAct prompting performance
 is general across different large language models. As shown in Table 5, GPT-3 (text-davinci-002,
 greedy decoding) consistently outperforms PaLM-540B on HotpotQA and ALFWorld, possibly
 because it is ﬁnetuned with human instruction following. This indicates ReAct prompting is effective
 across different large language models on different tasks. The code for these experiments are at
-https://react-lm.github.io/.</p><p class="pdf-element">A.2 REAC T OBTAINS UP-TO-DATE KNOWLEDGE ON HOTPOTQA</p><p class="pdf-element">Figure 4: Another example HotpotQA question, where the original label is outdated. Only ReAct is
+https://react-lm.github.io/.</p><p class="pdf-element" data-original-size="9.96">A.2 REAC T OBTAINS UP-TO-DATE KNOWLEDGE ON HOTPOTQA</p><p class="pdf-element" data-original-size="9.96">Figure 4: Another example HotpotQA question, where the original label is outdated. Only ReAct is
 able to obtain the up-to-date answer thanks to real-world web interaction plus reasoning.
 During trajectory inspection, we also ﬁnd that sometimes ReAct does not agree with dataset labels as
 the labels themselves could be outdated. For example, as shown in Figure 4, the question asks about
@@ -555,54 +555,54 @@ give wrong answers due to hallucination, Act fails despite the access of real-wo
 due to a lack of reasoning to guide how to interact with the Internet for QA. Only ReAct is able to
 retrieve up-to-date information from the Internet and provide a reasonable answer. Therefore, better
 incorporation of reasoning abilities might beneﬁt recent Internet-augmented language models (Nakano
-et al., 2021; Lazaridou et al., 2022; Shuster et al., 2022a) for up-to-date task solving.</p><p class="pdf-element">A.3 HUMAN-IN-THE-LOOP BEHAVIOR CORRECTION ON ALFWORLD</p><p class="pdf-element">We also explore human-in-the-loop interaction with ReAct, to allow a human to inspect and edit
+et al., 2021; Lazaridou et al., 2022; Shuster et al., 2022a) for up-to-date task solving.</p><p class="pdf-element" data-original-size="9.96">A.3 HUMAN-IN-THE-LOOP BEHAVIOR CORRECTION ON ALFWORLD</p><p class="pdf-element" data-original-size="9.96">We also explore human-in-the-loop interaction with ReAct, to allow a human to inspect and edit
 ReAct’s reasoning traces. Figure 5 shows that by simply removing a hallucinating sentence in Act
 17 and adding some hints in Act 23, ReAct can be made to change its behavior drastically to align
 with these human thought edits and succeed in the task. From a human perspective, solving such a
 task becomes signiﬁcantly easier, from typing tens of actions to only editing a couple of thoughts,
-which enables new forms of human-machine collaboration. We note that such a policy edit on-the-go</p><p class="pdf-element">14</p></div></div><div class="pdf-page"><div class="pdf-content"><p class="pdf-element">Published as a conference paper at ICLR 2023</p><p class="pdf-element">Figure 5: A human-in-the-loop behavior correction example with ReAct in AlfWorld. (a) ReAct
+which enables new forms of human-machine collaboration. We note that such a policy edit on-the-go</p><p class="pdf-element" data-original-size="9.96">14</p><p class="pdf-element" data-original-size="9.96">Published as a conference paper at ICLR 2023</p><p class="pdf-element" data-original-size="9.96">Figure 5: A human-in-the-loop behavior correction example with ReAct in AlfWorld. (a) ReAct
 trajectory fails due to a hallucinating thought (Act 17). (b) By a human simply editing two thoughts
-(Act 17, 23), the ReAct trajectory produces desirable reasoning traces and actions and succeeds.</p><p class="pdf-element">is difﬁcult for Act and previous RL methods, as a human cannot change the model parameters, and
+(Act 17, 23), the ReAct trajectory produces desirable reasoning traces and actions and succeeds.</p><p class="pdf-element" data-original-size="9.96">is difﬁcult for Act and previous RL methods, as a human cannot change the model parameters, and
 changing a few actions might not edit the rest of the model behavior. This paradigm is also more than
 human dialogue to update the goal or subgoal as in Huang et al. (2022b) — while editing ReAct
 thoughts can do these, it can also modify the model’s internal belief, reasoning styles, or anything the
 ﬂexible thought space supports, for better task solving. We believe this is an exciting direction for
-human alignment and leave more systematic study as future work.</p><p class="pdf-element">B EXPERIMENT DETAILS</p><p class="pdf-element">B.1 HOTPOTQA FINETUNING DETAILS</p><p class="pdf-element">For all ﬁnetuning we use a batch size of 64. On PaLM-8B, we ﬁnetune ReAct and Act methods
+human alignment and leave more systematic study as future work.</p><p class="pdf-element" data-original-size="11.96">B EXPERIMENT DETAILS</p><p class="pdf-element" data-original-size="9.96">B.1 HOTPOTQA FINETUNING DETAILS</p><p class="pdf-element" data-original-size="9.96">For all ﬁnetuning we use a batch size of 64. On PaLM-8B, we ﬁnetune ReAct and Act methods
 for 4, 000 steps and Standard and CoT methods for 2, 000 steps. On PaLM-62B, we ﬁnetune
 ReAct and Act methods for 4, 000 steps and Standard and CoT methods for 1, 000 steps. We
 ﬁnd ReAct and Act methods generally beneﬁt from more training steps (and more training data),
-while Standard and CoT methods degrade soon after ﬁnetuning.</p><p class="pdf-element">B.2 ALFWORLD IM-STYLE DETAILS</p><p class="pdf-element">For the IM-style ablation, the same expert trajectories used in ReAct are reannotated with dense
+while Standard and CoT methods degrade soon after ﬁnetuning.</p><p class="pdf-element" data-original-size="9.96">B.2 ALFWORLD IM-STYLE DETAILS</p><p class="pdf-element" data-original-size="9.96">For the IM-style ablation, the same expert trajectories used in ReAct are reannotated with dense
 external feedback thoughts within these trajectories, that limit ReAct-IM to only think about (1)
 decomposing the current goal and (2) the current subgoal that needs to be completed. In particular,
 ReAct-IM lacks thoughts that (1) determine when a subgoal is completed (2) determine what the
 next subgoal should be (3) inducing the LLM to refer to its internal pretraining knowledge to identify
-where items can be within the environment.</p><p class="pdf-element">15</p></div></div><div class="pdf-page"><div class="pdf-content"><p class="pdf-element">Published as a conference paper at ICLR 2023</p><p class="pdf-element">C PROMPTS</p><p class="pdf-element">C.1 HOTPOTQA</p><p class="pdf-element">Original
-Question</p><p class="pdf-element">Answer</p><p class="pdf-element">Question</p><p class="pdf-element">Answer</p><p class="pdf-element">Question</p><p class="pdf-element">Answer</p><p class="pdf-element">Question
-Answer</p><p class="pdf-element">Question
-Answer</p><p class="pdf-element">Question
-Answer</p><p class="pdf-element">Act
-Question</p><p class="pdf-element">Action 1
-Observation 1</p><p class="pdf-element">Action 2
-Observation 2</p><p class="pdf-element">Action 3
+where items can be within the environment.</p><p class="pdf-element" data-original-size="9.96">15</p><p class="pdf-element" data-original-size="9.96">Published as a conference paper at ICLR 2023</p><p class="pdf-element" data-original-size="11.96">C PROMPTS</p><p class="pdf-element" data-original-size="9.96">C.1 HOTPOTQA</p><p class="pdf-element" data-original-size="6.97">Original
+Question</p><p class="pdf-element" data-original-size="6.97">Answer</p><p class="pdf-element" data-original-size="6.97">Question</p><p class="pdf-element" data-original-size="6.97">Answer</p><p class="pdf-element" data-original-size="6.97">Question</p><p class="pdf-element" data-original-size="6.97">Answer</p><p class="pdf-element" data-original-size="6.97">Question
+Answer</p><p class="pdf-element" data-original-size="6.97">Question
+Answer</p><p class="pdf-element" data-original-size="6.97">Question
+Answer</p><p class="pdf-element" data-original-size="6.97">Act
+Question</p><p class="pdf-element" data-original-size="6.97">Action 1
+Observation 1</p><p class="pdf-element" data-original-size="6.97">Action 2
+Observation 2</p><p class="pdf-element" data-original-size="6.97">Action 3
 Observation 3
 Action 4
-Observation 4</p><p class="pdf-element">Action 5</p><p class="pdf-element">Question</p><p class="pdf-element">Action 1
-Observation 1</p><p class="pdf-element">Action 2
-Observation 2</p><p class="pdf-element">Action 3</p><p class="pdf-element">Question</p><p class="pdf-element">Action 1
-Observation 1</p><p class="pdf-element">Action 2
-Observation 2</p><p class="pdf-element">Action 3</p><p class="pdf-element">Question
+Observation 4</p><p class="pdf-element" data-original-size="6.97">Action 5</p><p class="pdf-element" data-original-size="6.97">Question</p><p class="pdf-element" data-original-size="6.97">Action 1
+Observation 1</p><p class="pdf-element" data-original-size="6.97">Action 2
+Observation 2</p><p class="pdf-element" data-original-size="6.97">Action 3</p><p class="pdf-element" data-original-size="6.97">Question</p><p class="pdf-element" data-original-size="6.97">Action 1
+Observation 1</p><p class="pdf-element" data-original-size="6.97">Action 2
+Observation 2</p><p class="pdf-element" data-original-size="6.97">Action 3</p><p class="pdf-element" data-original-size="6.97">Question
 Action 1
-Observation 1</p><p class="pdf-element">Action 2
-Observation 2</p><p class="pdf-element">Hotpot QA Prompts</p><p class="pdf-element">What is the elevation range for the area that the eastern sector of the
+Observation 1</p><p class="pdf-element" data-original-size="6.97">Action 2
+Observation 2</p><p class="pdf-element" data-original-size="6.97">Hotpot QA Prompts</p><p class="pdf-element" data-original-size="6.97">What is the elevation range for the area that the eastern sector of the
 Colorado orogeny extends into?
-1,800 to 7,000 ft</p><p class="pdf-element">Musician and satirist Allie Goertz wrote a song about the "The Simpsons"
+1,800 to 7,000 ft</p><p class="pdf-element" data-original-size="6.97">Musician and satirist Allie Goertz wrote a song about the "The Simpsons"
 character Milhouse, who Matt Groening named after who?
-Richard Nixon</p><p class="pdf-element">Which documentary is about Finnish rock groups, Adam Clayton Powell or The
+Richard Nixon</p><p class="pdf-element" data-original-size="6.97">Which documentary is about Finnish rock groups, Adam Clayton Powell or The
 Saimaa Gesture?
-The Saimaa Gesture</p><p class="pdf-element">What profession does Nicholas Ray and Elia Kazan have in common?
-director, screenwriter, actor</p><p class="pdf-element">Which magazine was started first Arthur’s Magazine or First for Women?
-Arthur’s Magazine</p><p class="pdf-element">Were Pavel Urysohn and Leonid Levin known for the same type of work?
-Yes</p><p class="pdf-element">What is the elevation range for the area that the eastern sector of the
+The Saimaa Gesture</p><p class="pdf-element" data-original-size="6.97">What profession does Nicholas Ray and Elia Kazan have in common?
+director, screenwriter, actor</p><p class="pdf-element" data-original-size="6.97">Which magazine was started first Arthur’s Magazine or First for Women?
+Arthur’s Magazine</p><p class="pdf-element" data-original-size="6.97">Were Pavel Urysohn and Leonid Levin known for the same type of work?
+Yes</p><p class="pdf-element" data-original-size="6.97">What is the elevation range for the area that the eastern sector of the
 Colorado orogeny extends into?
 Search[Colorado orogeny]
 The Colorado orogeny was an episode of mountain building (an orogeny) in
@@ -616,7 +616,7 @@ Search[High Plains (United States)]
 The High Plains are a subregion of the Great Plains.
 High Plains rise in elevation from around 1,800 to 7,000 ft (550 to 2,130
 m).[3]
-Finish[1,800 to 7,000 ft]</p><p class="pdf-element">From east to west, the</p><p class="pdf-element">Musician and satirist Allie Goertz wrote a song about the "The Simpsons"
+Finish[1,800 to 7,000 ft]</p><p class="pdf-element" data-original-size="6.97">From east to west, the</p><p class="pdf-element" data-original-size="6.97">Musician and satirist Allie Goertz wrote a song about the "The Simpsons"
 character Milhouse, who Matt Groening named after who?
 Search[Milhouse]
 Milhouse Mussolini Van Houten is a recurring character in the Fox animated
@@ -625,7 +625,7 @@ Groening.
 Lookup[named after]
 (Result 1 / 1) Milhouse was named after U.S. president Richard Nixon, whose
 middle name was Milhous.
-Finish[Richard Nixon]</p><p class="pdf-element">Which documentary is about Finnish rock groups, Adam Clayton Powell or The
+Finish[Richard Nixon]</p><p class="pdf-element" data-original-size="6.97">Which documentary is about Finnish rock groups, Adam Clayton Powell or The
 Saimaa Gesture?
 Search[Adam Clayton Powell]
 Could not find [Adam Clayton Powell]. Similar:
@@ -637,31 +637,31 @@ Adam Clayton Powell is a 1989 American documentary film directed by
 Richard Kilberg.
 African-American politician Adam Clayton Powell Jr.[3][4] It was later aired
 as part of the PBS series The American Experience.
-Finish[The Saimaa Gesture]</p><p class="pdf-element">The film is about the rise and fall of influential</p><p class="pdf-element">[’Adam Clayton Powell</p><p class="pdf-element">What profession does Nicholas Ray and Elia Kazan have in common?
+Finish[The Saimaa Gesture]</p><p class="pdf-element" data-original-size="6.97">The film is about the rise and fall of influential</p><p class="pdf-element" data-original-size="6.97">[’Adam Clayton Powell</p><p class="pdf-element" data-original-size="6.97">What profession does Nicholas Ray and Elia Kazan have in common?
 Search[Nicholas Ray]
 Nicholas Ray (born Raymond Nicholas Kienzle Jr., August 7, 1911 - June 16,
 1979) was an American film director, screenwriter, and actor best known for
 the 1955 film Rebel Without a Cause.
 Search[Elia Kazan]
 Elia Kazan was an American film and theatre director, producer, screenwriter
-and actor.</p><p class="pdf-element">Continued on next page</p><p class="pdf-element">16</p></div></div><div class="pdf-page"><div class="pdf-content"><p class="pdf-element">Published as a conference paper at ICLR 2023</p><p class="pdf-element">Action 3
+and actor.</p><p class="pdf-element" data-original-size="6.97">Continued on next page</p><p class="pdf-element" data-original-size="9.96">16</p><p class="pdf-element" data-original-size="9.96">Published as a conference paper at ICLR 2023</p><p class="pdf-element" data-original-size="6.97">Action 3
 Question
 Action 1
-Observation 1</p><p class="pdf-element">Action 2
-Observation 2</p><p class="pdf-element">Action 3</p><p class="pdf-element">Question
+Observation 1</p><p class="pdf-element" data-original-size="6.97">Action 2
+Observation 2</p><p class="pdf-element" data-original-size="6.97">Action 3</p><p class="pdf-element" data-original-size="6.97">Question
 Action 1
-Observation 1</p><p class="pdf-element">Action 2
-Observation 2</p><p class="pdf-element">Action 3</p><p class="pdf-element">CoT
-Question</p><p class="pdf-element">Thought</p><p class="pdf-element">Answer</p><p class="pdf-element">Question</p><p class="pdf-element">Thought</p><p class="pdf-element">Answer</p><p class="pdf-element">Question</p><p class="pdf-element">Thought</p><p class="pdf-element">Answer</p><p class="pdf-element">Question
-Thought</p><p class="pdf-element">Answer</p><p class="pdf-element">Question
-Thought</p><p class="pdf-element">Answer</p><p class="pdf-element">Question
-Thought</p><p class="pdf-element">Answer</p><p class="pdf-element">ReAct
-Question</p><p class="pdf-element">Thought 1</p><p class="pdf-element">Action 1
-Observation 1</p><p class="pdf-element">Thought 2</p><p class="pdf-element">Action 2
-Observation 2</p><p class="pdf-element">Thought 3</p><p class="pdf-element">Action 3
+Observation 1</p><p class="pdf-element" data-original-size="6.97">Action 2
+Observation 2</p><p class="pdf-element" data-original-size="6.97">Action 3</p><p class="pdf-element" data-original-size="6.97">CoT
+Question</p><p class="pdf-element" data-original-size="6.97">Thought</p><p class="pdf-element" data-original-size="6.97">Answer</p><p class="pdf-element" data-original-size="6.97">Question</p><p class="pdf-element" data-original-size="6.97">Thought</p><p class="pdf-element" data-original-size="6.97">Answer</p><p class="pdf-element" data-original-size="6.97">Question</p><p class="pdf-element" data-original-size="6.97">Thought</p><p class="pdf-element" data-original-size="6.97">Answer</p><p class="pdf-element" data-original-size="6.97">Question
+Thought</p><p class="pdf-element" data-original-size="6.97">Answer</p><p class="pdf-element" data-original-size="6.97">Question
+Thought</p><p class="pdf-element" data-original-size="6.97">Answer</p><p class="pdf-element" data-original-size="6.97">Question
+Thought</p><p class="pdf-element" data-original-size="6.97">Answer</p><p class="pdf-element" data-original-size="6.97">ReAct
+Question</p><p class="pdf-element" data-original-size="6.97">Thought 1</p><p class="pdf-element" data-original-size="6.97">Action 1
+Observation 1</p><p class="pdf-element" data-original-size="6.97">Thought 2</p><p class="pdf-element" data-original-size="6.97">Action 2
+Observation 2</p><p class="pdf-element" data-original-size="6.97">Thought 3</p><p class="pdf-element" data-original-size="6.97">Action 3
 Observation 3
 Thought 4
-Action 4</p><p class="pdf-element">Hotpot QA Prompts – Continued from previous page</p><p class="pdf-element">Finish[director, screenwriter, actor]
+Action 4</p><p class="pdf-element" data-original-size="6.97">Hotpot QA Prompts – Continued from previous page</p><p class="pdf-element" data-original-size="6.97">Finish[director, screenwriter, actor]
 Which magazine was started first Arthur’s Magazine or First for Women?
 Search[Arthur’s Magazine]
 Arthur’s Magazine (1844-1846) was an American literary periodical published
@@ -669,43 +669,43 @@ in Philadelphia in the 19th century.
 Search[First for Women]
 First for Women is a woman’s magazine published by Bauer Media Group in the
 USA.[1] The magazine was started in 1989.
-Finish[Arthur’s Magazine]</p><p class="pdf-element">Were Pavel Urysohn and Leonid Levin known for the same type of work?
+Finish[Arthur’s Magazine]</p><p class="pdf-element" data-original-size="6.97">Were Pavel Urysohn and Leonid Levin known for the same type of work?
 Search[Pavel Urysohn]
 Pavel Samuilovich Urysohn (February 3, 1898 - August 17, 1924) was a Soviet
 mathematician who is best known for his contributions in dimension theory.
 Search[Leonid Levin]
 Leonid Anatolievich Levin is a Soviet-American mathematician and computer
 scientist.
-Finish[yes]</p><p class="pdf-element">What is the elevation range for the area that the eastern sector of the
+Finish[yes]</p><p class="pdf-element" data-original-size="6.97">What is the elevation range for the area that the eastern sector of the
 Colorado orogeny extends into?
 Let’s think step by step. The eastern sector of Colorado orogeny extends
 High Plains rise in elevation from around 1,800 to
 into the High Plains.
 7,000 ft, so the answer is 1,800 to 7,000 ft.
-1,800 to 7,000 ft</p><p class="pdf-element">Musician and satirist Allie Goertz wrote a song about the "The Simpsons"
+1,800 to 7,000 ft</p><p class="pdf-element" data-original-size="6.97">Musician and satirist Allie Goertz wrote a song about the "The Simpsons"
 character Milhouse, who Matt Groening named after who?
 Let’s think step by step. Milhouse was named after U.S. president Richard
 Nixon, so the answer is Richard Nixon.
-Richard Nixon</p><p class="pdf-element">Which documentary is about Finnish rock groups, Adam Clayton Powell or The
+Richard Nixon</p><p class="pdf-element" data-original-size="6.97">Which documentary is about Finnish rock groups, Adam Clayton Powell or The
 Saimaa Gesture?
 Let’s think step by step. Adam Clayton Powell (film) is a documentary about
 an African-American politician, not Finnish rock groups. So the documentary
 about Finnish rock groups must instead be The Saimaa Gesture.
-The Saimaa Gesture</p><p class="pdf-element">What profession does Nicholas Ray and Elia Kazan have in common?
+The Saimaa Gesture</p><p class="pdf-element" data-original-size="6.97">What profession does Nicholas Ray and Elia Kazan have in common?
 Let’s think step by step. Professions of Nicholas Ray are director,
 screenwriter, and actor.
 screenwriter, and actor.
 common is director, screenwriter, and actor.
-director, screenwriter, actor</p><p class="pdf-element">Professions of Elia Kazan are director, producer,
-So profession Nicholas Ray and Elia Kazan have in</p><p class="pdf-element">Which magazine was started first Arthur’s Magazine or First for Women?
+director, screenwriter, actor</p><p class="pdf-element" data-original-size="6.97">Professions of Elia Kazan are director, producer,
+So profession Nicholas Ray and Elia Kazan have in</p><p class="pdf-element" data-original-size="6.97">Which magazine was started first Arthur’s Magazine or First for Women?
 Let’s think step by step. Arthur’s Magazine was started in 1844.
 for Women was started in 1989. 1844 (Arthur’s Magazine) &lt; 1989 (First for
 Women), so Arthur’s Magazine was started first.
-Arthur’s Magazine</p><p class="pdf-element">First</p><p class="pdf-element">Were Pavel Urysohn and Leonid Levin known for the same type of work?
+Arthur’s Magazine</p><p class="pdf-element" data-original-size="6.97">First</p><p class="pdf-element" data-original-size="6.97">Were Pavel Urysohn and Leonid Levin known for the same type of work?
 Let’s think step by step. Pavel Urysohn is a mathematician.
 is a mathematician and computer scientist. So Pavel Urysohn and Leonid
 Levin have the same type of work.
-Yes</p><p class="pdf-element">Leonid Levin</p><p class="pdf-element">What is the elevation range for the area that the eastern sector of the
+Yes</p><p class="pdf-element" data-original-size="6.97">Leonid Levin</p><p class="pdf-element" data-original-size="6.97">What is the elevation range for the area that the eastern sector of the
 Colorado orogeny extends into?
 I need to search Colorado orogeny, find the area that the eastern sector
 of the Colorado orogeny extends into, then find the elevation range of the
@@ -723,24 +723,24 @@ need to search High Plains and find its elevation range.
 Search[High Plains]
 High Plains refers to one of two distinct land regions
 I need to instead search High Plains (United States).
-Search[High Plains (United States)]</p><p class="pdf-element">So I</p><p class="pdf-element">Continued on next page</p><p class="pdf-element">17</p></div></div><div class="pdf-page"><div class="pdf-content"><p class="pdf-element">Published as a conference paper at ICLR 2023</p><p class="pdf-element">Observation 4</p><p class="pdf-element">Thought 5</p><p class="pdf-element">Action 5</p><p class="pdf-element">Question</p><p class="pdf-element">Thought 1</p><p class="pdf-element">Action 1
-Observation 1</p><p class="pdf-element">Thought 2</p><p class="pdf-element">Action 2
-Observation 2</p><p class="pdf-element">Thought 3</p><p class="pdf-element">Action 3</p><p class="pdf-element">Question</p><p class="pdf-element">Thought 1</p><p class="pdf-element">Action 1
-Observation 1</p><p class="pdf-element">Thought 2
+Search[High Plains (United States)]</p><p class="pdf-element" data-original-size="6.97">So I</p><p class="pdf-element" data-original-size="6.97">Continued on next page</p><p class="pdf-element" data-original-size="9.96">17</p><p class="pdf-element" data-original-size="9.96">Published as a conference paper at ICLR 2023</p><p class="pdf-element" data-original-size="6.97">Observation 4</p><p class="pdf-element" data-original-size="6.97">Thought 5</p><p class="pdf-element" data-original-size="6.97">Action 5</p><p class="pdf-element" data-original-size="6.97">Question</p><p class="pdf-element" data-original-size="6.97">Thought 1</p><p class="pdf-element" data-original-size="6.97">Action 1
+Observation 1</p><p class="pdf-element" data-original-size="6.97">Thought 2</p><p class="pdf-element" data-original-size="6.97">Action 2
+Observation 2</p><p class="pdf-element" data-original-size="6.97">Thought 3</p><p class="pdf-element" data-original-size="6.97">Action 3</p><p class="pdf-element" data-original-size="6.97">Question</p><p class="pdf-element" data-original-size="6.97">Thought 1</p><p class="pdf-element" data-original-size="6.97">Action 1
+Observation 1</p><p class="pdf-element" data-original-size="6.97">Thought 2
 Action 2
-Observation 2</p><p class="pdf-element">Thought 3</p><p class="pdf-element">Action 3</p><p class="pdf-element">Question
-Thought 1</p><p class="pdf-element">Action 1
-Observation 1</p><p class="pdf-element">Thought 2</p><p class="pdf-element">Action 2
-Observation 2</p><p class="pdf-element">Thought 3</p><p class="pdf-element">Action 3</p><p class="pdf-element">Question
-Thought 1</p><p class="pdf-element">Action 1
-Observation 1</p><p class="pdf-element">Thought 2</p><p class="pdf-element">Action 2
-Observation 2</p><p class="pdf-element">Thought 3</p><p class="pdf-element">Action 3</p><p class="pdf-element">Question
-Thought 1</p><p class="pdf-element">Action 1</p><p class="pdf-element">Hotpot QA Prompts – Continued from previous page</p><p class="pdf-element">The High Plains are a subregion of the Great Plains.
+Observation 2</p><p class="pdf-element" data-original-size="6.97">Thought 3</p><p class="pdf-element" data-original-size="6.97">Action 3</p><p class="pdf-element" data-original-size="6.97">Question
+Thought 1</p><p class="pdf-element" data-original-size="6.97">Action 1
+Observation 1</p><p class="pdf-element" data-original-size="6.97">Thought 2</p><p class="pdf-element" data-original-size="6.97">Action 2
+Observation 2</p><p class="pdf-element" data-original-size="6.97">Thought 3</p><p class="pdf-element" data-original-size="6.97">Action 3</p><p class="pdf-element" data-original-size="6.97">Question
+Thought 1</p><p class="pdf-element" data-original-size="6.97">Action 1
+Observation 1</p><p class="pdf-element" data-original-size="6.97">Thought 2</p><p class="pdf-element" data-original-size="6.97">Action 2
+Observation 2</p><p class="pdf-element" data-original-size="6.97">Thought 3</p><p class="pdf-element" data-original-size="6.97">Action 3</p><p class="pdf-element" data-original-size="6.97">Question
+Thought 1</p><p class="pdf-element" data-original-size="6.97">Action 1</p><p class="pdf-element" data-original-size="6.97">Hotpot QA Prompts – Continued from previous page</p><p class="pdf-element" data-original-size="6.97">The High Plains are a subregion of the Great Plains.
 High Plains rise in elevation from around 1,800 to 7,000 ft (550 to 2,130
 m).[3]
 High Plains rise in elevation from around 1,800 to 7,000 ft, so the answer
 is 1,800 to 7,000 ft.
-Finish[1,800 to 7,000 ft]</p><p class="pdf-element">From east to west, the</p><p class="pdf-element">Musician and satirist Allie Goertz wrote a song about the "The Simpsons"
+Finish[1,800 to 7,000 ft]</p><p class="pdf-element" data-original-size="6.97">From east to west, the</p><p class="pdf-element" data-original-size="6.97">Musician and satirist Allie Goertz wrote a song about the "The Simpsons"
 character Milhouse, who Matt Groening named after who?
 The question simplifies to "The Simpsons" character Milhouse is named after
 I only need to search Milhouse and find who it is named after.
@@ -756,7 +756,7 @@ Lookup[named after]
 middle name was Milhous.
 Milhouse was named after U.S. president Richard Nixon, so the answer is
 Richard Nixon.
-Finish[Richard Nixon]</p><p class="pdf-element">Which documentary is about Finnish rock groups, Adam Clayton Powell or The
+Finish[Richard Nixon]</p><p class="pdf-element" data-original-size="6.97">Which documentary is about Finnish rock groups, Adam Clayton Powell or The
 Saimaa Gesture?
 I need to search Adam Clayton Powell and The Saimaa Gesture, and find which
 documentary is about Finnish rock groups.
@@ -774,7 +774,7 @@ as part of the PBS series The American Experience.
 Adam Clayton Powell (film) is a documentary about an African-American
 politician, not Finnish rock groups. So the documentary about Finnish rock
 groups must instead be The Saimaa Gesture.
-Finish[The Saimaa Gesture]</p><p class="pdf-element">The film is about the rise and fall of influential</p><p class="pdf-element">[’Adam Clayton Powell</p><p class="pdf-element">What profession does Nicholas Ray and Elia Kazan have in common?
+Finish[The Saimaa Gesture]</p><p class="pdf-element" data-original-size="6.97">The film is about the rise and fall of influential</p><p class="pdf-element" data-original-size="6.97">[’Adam Clayton Powell</p><p class="pdf-element" data-original-size="6.97">What profession does Nicholas Ray and Elia Kazan have in common?
 I need to search Nicholas Ray and Elia Kazan, find their professions, then
 find the profession they have in common.
 Search[Nicholas Ray]
@@ -789,7 +789,7 @@ and actor.
 Professions of Elia Kazan are director, producer, screenwriter, and actor.
 So profession Nicholas Ray and Elia Kazan have in common is director,
 screenwriter, and actor.
-Finish[director, screenwriter, actor]</p><p class="pdf-element">I need</p><p class="pdf-element">Which magazine was started first Arthur’s Magazine or First for Women?
+Finish[director, screenwriter, actor]</p><p class="pdf-element" data-original-size="6.97">I need</p><p class="pdf-element" data-original-size="6.97">Which magazine was started first Arthur’s Magazine or First for Women?
 I need to search Arthur’s Magazine and First for Women, and find which was
 started first.
 Search[Arthur’s Magazine]
@@ -802,11 +802,11 @@ First for Women is a woman’s magazine published by Bauer Media Group in the
 USA.[1] The magazine was started in 1989.
 First for Women was started in 1989.
 for Women), so Arthur’s Magazine was started first.
-Finish[Arthur’s Magazine]</p><p class="pdf-element">I need to search First for Women</p><p class="pdf-element">1844 (Arthur’s Magazine) &lt; 1989 (First</p><p class="pdf-element">Were Pavel Urysohn and Leonid Levin known for the same type of work?
+Finish[Arthur’s Magazine]</p><p class="pdf-element" data-original-size="6.97">I need to search First for Women</p><p class="pdf-element" data-original-size="6.97">1844 (Arthur’s Magazine) &lt; 1989 (First</p><p class="pdf-element" data-original-size="6.97">Were Pavel Urysohn and Leonid Levin known for the same type of work?
 I need to search Pavel Urysohn and Leonid Levin, find their types of work,
 then find if they are the same.
-Search[Pavel Urysohn]</p><p class="pdf-element">18</p><p class="pdf-element">Continued on next page</p></div></div><div class="pdf-page"><div class="pdf-content"><p class="pdf-element">Published as a conference paper at ICLR 2023</p><p class="pdf-element">Hotpot QA Prompts – Continued from previous page</p><p class="pdf-element">Observation 1</p><p class="pdf-element">Thought 2</p><p class="pdf-element">Action 2
-Observation 2</p><p class="pdf-element">Thought 3</p><p class="pdf-element">Action 3</p><p class="pdf-element">Pavel Samuilovich Urysohn (February 3, 1898 - August 17, 1924) was a Soviet
+Search[Pavel Urysohn]</p><p class="pdf-element" data-original-size="9.96">18</p><p class="pdf-element" data-original-size="6.97">Continued on next page</p><p class="pdf-element" data-original-size="9.96">Published as a conference paper at ICLR 2023</p><p class="pdf-element" data-original-size="6.97">Hotpot QA Prompts – Continued from previous page</p><p class="pdf-element" data-original-size="6.97">Observation 1</p><p class="pdf-element" data-original-size="6.97">Thought 2</p><p class="pdf-element" data-original-size="6.97">Action 2
+Observation 2</p><p class="pdf-element" data-original-size="6.97">Thought 3</p><p class="pdf-element" data-original-size="6.97">Action 3</p><p class="pdf-element" data-original-size="6.97">Pavel Samuilovich Urysohn (February 3, 1898 - August 17, 1924) was a Soviet
 mathematician who is best known for his contributions in dimension theory.
 Pavel Urysohn is a mathematician. I need to search Leonid Levin next and
 find its type of work.
@@ -815,25 +815,25 @@ Leonid Anatolievich Levin is a Soviet-American mathematician and computer
 scientist.
 Leonid Levin is a mathematician and computer scientist.
 and Leonid Levin have the same type of work.
-Finish[yes]</p><p class="pdf-element">So Pavel Urysohn</p><p class="pdf-element">19</p></div></div><div class="pdf-page"><div class="pdf-content"><p class="pdf-element">Published as a conference paper at ICLR 2023</p><p class="pdf-element">C.2 FEVER</p><p class="pdf-element">Original</p><p class="pdf-element">Determine if there is Observation that SUPPORTS or REFUTES a Claim, or if
-there is NOT ENOUGH INFORMATION.</p><p class="pdf-element">FEVER Prompts</p><p class="pdf-element">Claim
-Answer</p><p class="pdf-element">Claim
-Answer</p><p class="pdf-element">Claim
-Answer</p><p class="pdf-element">Act</p><p class="pdf-element">Claim
+Finish[yes]</p><p class="pdf-element" data-original-size="6.97">So Pavel Urysohn</p><p class="pdf-element" data-original-size="9.96">19</p><p class="pdf-element" data-original-size="9.96">Published as a conference paper at ICLR 2023</p><p class="pdf-element" data-original-size="9.96">C.2 FEVER</p><p class="pdf-element" data-original-size="6.97">Original</p><p class="pdf-element" data-original-size="6.97">Determine if there is Observation that SUPPORTS or REFUTES a Claim, or if
+there is NOT ENOUGH INFORMATION.</p><p class="pdf-element" data-original-size="6.97">FEVER Prompts</p><p class="pdf-element" data-original-size="6.97">Claim
+Answer</p><p class="pdf-element" data-original-size="6.97">Claim
+Answer</p><p class="pdf-element" data-original-size="6.97">Claim
+Answer</p><p class="pdf-element" data-original-size="6.97">Act</p><p class="pdf-element" data-original-size="6.97">Claim
 Action2
-Observation 1</p><p class="pdf-element">Action 2</p><p class="pdf-element">Claim
+Observation 1</p><p class="pdf-element" data-original-size="6.97">Action 2</p><p class="pdf-element" data-original-size="6.97">Claim
 Action 1
-Observation 1</p><p class="pdf-element">Action 2</p><p class="pdf-element">Claim
+Observation 1</p><p class="pdf-element" data-original-size="6.97">Action 2</p><p class="pdf-element" data-original-size="6.97">Claim
 Action 1
-Observation 1</p><p class="pdf-element">Action 2
-Observation 2</p><p class="pdf-element">Action 3
-Observation 3</p><p class="pdf-element">Action 4</p><p class="pdf-element">CoT</p><p class="pdf-element">Claim
-Thought</p><p class="pdf-element">Answer</p><p class="pdf-element">Claim
-Thought</p><p class="pdf-element">Answer</p><p class="pdf-element">Nikolaj Coster-Waldau worked with the Fox Broadcasting Company.
-SUPPORTS</p><p class="pdf-element">Stranger Things is set in Bloomington, Indiana.
-REFUTES</p><p class="pdf-element">Beautiful reached number two on the Billboard Hot 100 in 2003.
-NOT ENOUGH INFO</p><p class="pdf-element">Determine if there is Observation that SUPPORTS or REFUTES a Claim, or if
-there is NOT ENOUGH INFORMATION.</p><p class="pdf-element">He graduated from the Danish National School of Performing Arts</p><p class="pdf-element">Nikolaj Coster-Waldau worked with the Fox Broadcasting Company.
+Observation 1</p><p class="pdf-element" data-original-size="6.97">Action 2
+Observation 2</p><p class="pdf-element" data-original-size="6.97">Action 3
+Observation 3</p><p class="pdf-element" data-original-size="6.97">Action 4</p><p class="pdf-element" data-original-size="6.97">CoT</p><p class="pdf-element" data-original-size="6.97">Claim
+Thought</p><p class="pdf-element" data-original-size="6.97">Answer</p><p class="pdf-element" data-original-size="6.97">Claim
+Thought</p><p class="pdf-element" data-original-size="6.97">Answer</p><p class="pdf-element" data-original-size="6.97">Nikolaj Coster-Waldau worked with the Fox Broadcasting Company.
+SUPPORTS</p><p class="pdf-element" data-original-size="6.97">Stranger Things is set in Bloomington, Indiana.
+REFUTES</p><p class="pdf-element" data-original-size="6.97">Beautiful reached number two on the Billboard Hot 100 in 2003.
+NOT ENOUGH INFO</p><p class="pdf-element" data-original-size="6.97">Determine if there is Observation that SUPPORTS or REFUTES a Claim, or if
+there is NOT ENOUGH INFORMATION.</p><p class="pdf-element" data-original-size="6.97">He graduated from the Danish National School of Performing Arts</p><p class="pdf-element" data-original-size="6.97">Nikolaj Coster-Waldau worked with the Fox Broadcasting Company.
 Search[Nikolaj Coster-Waldau]
 Nikolaj William Coster-Waldau (born 27 July 1970) is a Danish actor and
 producer.
@@ -848,14 +848,14 @@ Scandinavia, including Headhunters (2011) and A Thousand Times Good Night
 detective in the short-lived Fox television series New Amsterdam (2008), and
 appeared in the 2009 Fox television film Virtuality, originally intended as
 a pilot.
-Finish[SUPPORTS]</p><p class="pdf-element">He played Jaime Lannister in the HBO fantasy</p><p class="pdf-element">Stranger Things is set in Bloomington, Indiana.
+Finish[SUPPORTS]</p><p class="pdf-element" data-original-size="6.97">He played Jaime Lannister in the HBO fantasy</p><p class="pdf-element" data-original-size="6.97">Stranger Things is set in Bloomington, Indiana.
 Search[Stranger Things]
 Stranger Things is an American science fiction horror drama television
 series created by the Duffer Brothers. Set in the 1980s, primarily in
 the fictional town of Hawkins, Indiana, the series centers on a number of
 mysteries and supernatural events occurring around the town and their impact
 on an ensemble of child and adult characters.
-Finish[REFUTES]</p><p class="pdf-element">Beautiful reached number two on the Billboard Hot 100 in 2003.
+Finish[REFUTES]</p><p class="pdf-element" data-original-size="6.97">Beautiful reached number two on the Billboard Hot 100 in 2003.
 Search[Beautiful]
 Could not find [Beautiful]. Similar: [’Beautiful’, ’Beautiful, Beautiful’,
 ’A Beautiful Mind (film)’, ’Beautiful (Christina Aguilera song)’, ’Life Is
@@ -866,27 +866,27 @@ fourth studio album, Stripped (2002).
 Lookup[Billboard Hot 100]
 (Result 1 / 3) The song peaked at number two on the Billboard Hot 100 in the
 United States, where it was certified Gold for 500,000 units shipped.
-Finish[NOT ENOUGH INFO]</p><p class="pdf-element">Determine if there is Observation that SUPPORTS or REFUTES a Claim, or if
-there is NOT ENOUGH INFORMATION.</p><p class="pdf-element">Nikolaj Coster-Waldau worked with the Fox Broadcasting Company.
+Finish[NOT ENOUGH INFO]</p><p class="pdf-element" data-original-size="6.97">Determine if there is Observation that SUPPORTS or REFUTES a Claim, or if
+there is NOT ENOUGH INFORMATION.</p><p class="pdf-element" data-original-size="6.97">Nikolaj Coster-Waldau worked with the Fox Broadcasting Company.
 Nikolaj William Coster-Waldau appeared in the 2009 Fox television film
 Virtuality, so he has worked with the Fox Broadcasting Company.
-SUPPORTS</p><p class="pdf-element">Stranger Things is set in Bloomington, Indiana.
+SUPPORTS</p><p class="pdf-element" data-original-size="6.97">Stranger Things is set in Bloomington, Indiana.
 Stranger Things is in the fictional town of Hawkins, Indiana, not in
 Bloomington, Indiana.
-REFUTES</p><p class="pdf-element">Continued on next page</p><p class="pdf-element">20</p></div></div><div class="pdf-page"><div class="pdf-content"><p class="pdf-element">Published as a conference paper at ICLR 2023</p><p class="pdf-element">Fever Prompts – Continued from previous page</p><p class="pdf-element">Claim
-Thought</p><p class="pdf-element">Answer</p><p class="pdf-element">ReAct</p><p class="pdf-element">Beautiful reached number two on the Billboard Hot 100 in 2003.
+REFUTES</p><p class="pdf-element" data-original-size="6.97">Continued on next page</p><p class="pdf-element" data-original-size="9.96">20</p><p class="pdf-element" data-original-size="9.96">Published as a conference paper at ICLR 2023</p><p class="pdf-element" data-original-size="6.97">Fever Prompts – Continued from previous page</p><p class="pdf-element" data-original-size="6.97">Claim
+Thought</p><p class="pdf-element" data-original-size="6.97">Answer</p><p class="pdf-element" data-original-size="6.97">ReAct</p><p class="pdf-element" data-original-size="6.97">Beautiful reached number two on the Billboard Hot 100 in 2003.
 The song peaked at number two on the Billboard Hot 100 in the United States,
 but not sure if it was in 2003.
-NOT ENOUGH INFO</p><p class="pdf-element">Determine if there is Observation that SUPPORTS or REFUTES a Claim, or if
-there is NOT ENOUGH INFORMATION.</p><p class="pdf-element">Claim
-Thought 1</p><p class="pdf-element">Action 1
-Observation 1</p><p class="pdf-element">Thought 2</p><p class="pdf-element">Action 2</p><p class="pdf-element">Claim
-Thought 1</p><p class="pdf-element">Action 1
-Observation 1</p><p class="pdf-element">Thought 2</p><p class="pdf-element">Action 2</p><p class="pdf-element">Claim
-Thought 1</p><p class="pdf-element">Action 1
-Observation 1</p><p class="pdf-element">Thought 2</p><p class="pdf-element">Action 2
-Observation 2</p><p class="pdf-element">Thought 3</p><p class="pdf-element">Action 3
-Observation 3</p><p class="pdf-element">Thought 4</p><p class="pdf-element">Action 4</p><p class="pdf-element">He graduated from the Danish National School of Performing Arts</p><p class="pdf-element">Nikolaj Coster-Waldau worked with the Fox Broadcasting Company.
+NOT ENOUGH INFO</p><p class="pdf-element" data-original-size="6.97">Determine if there is Observation that SUPPORTS or REFUTES a Claim, or if
+there is NOT ENOUGH INFORMATION.</p><p class="pdf-element" data-original-size="6.97">Claim
+Thought 1</p><p class="pdf-element" data-original-size="6.97">Action 1
+Observation 1</p><p class="pdf-element" data-original-size="6.97">Thought 2</p><p class="pdf-element" data-original-size="6.97">Action 2</p><p class="pdf-element" data-original-size="6.97">Claim
+Thought 1</p><p class="pdf-element" data-original-size="6.97">Action 1
+Observation 1</p><p class="pdf-element" data-original-size="6.97">Thought 2</p><p class="pdf-element" data-original-size="6.97">Action 2</p><p class="pdf-element" data-original-size="6.97">Claim
+Thought 1</p><p class="pdf-element" data-original-size="6.97">Action 1
+Observation 1</p><p class="pdf-element" data-original-size="6.97">Thought 2</p><p class="pdf-element" data-original-size="6.97">Action 2
+Observation 2</p><p class="pdf-element" data-original-size="6.97">Thought 3</p><p class="pdf-element" data-original-size="6.97">Action 3
+Observation 3</p><p class="pdf-element" data-original-size="6.97">Thought 4</p><p class="pdf-element" data-original-size="6.97">Action 4</p><p class="pdf-element" data-original-size="6.97">He graduated from the Danish National School of Performing Arts</p><p class="pdf-element" data-original-size="6.97">Nikolaj Coster-Waldau worked with the Fox Broadcasting Company.
 I need to search Nikolaj Coster-Waldau and find if he has worked with the
 Fox Broadcasting Company.
 Search[Nikolaj Coster-Waldau]
@@ -905,7 +905,7 @@ appeared in the 2009 Fox television film Virtuality, originally intended as
 a pilot.
 Because he "appeared in the 2009 Fox television film Virtuality", he should
 have worked with the Fox Broadcasting Company.
-Finish[SUPPORTS]</p><p class="pdf-element">He played Jaime Lannister in the HBO fantasy</p><p class="pdf-element">Stranger Things is set in Bloomington, Indiana.
+Finish[SUPPORTS]</p><p class="pdf-element" data-original-size="6.97">He played Jaime Lannister in the HBO fantasy</p><p class="pdf-element" data-original-size="6.97">Stranger Things is set in Bloomington, Indiana.
 I should search for Stranger Things, and see if it is set in Bloomington,
 Indiana.
 Search[Stranger Things]
@@ -916,7 +916,7 @@ mysteries and supernatural events occurring around the town and their impact
 on an ensemble of child and adult characters.
 The observation says that it is set in a "fictional town of Hawkins,
 Indiana", so it is not set in Bloomington.
-Finish[REFUTES]</p><p class="pdf-element">Beautiful reached number two on the Billboard Hot 100 in 2003.
+Finish[REFUTES]</p><p class="pdf-element" data-original-size="6.97">Beautiful reached number two on the Billboard Hot 100 in 2003.
 I need to search the song Beautiful and find if it reached number two on the
 Billboard Hot 100 in 2003.
 Search[Beautiful]
@@ -935,13 +935,13 @@ Lookup[Billboard Hot 100]
 United States, where it was certified Gold for 500,000 units shipped.
 It only says the song peaked at number two on the Billboard Hot 100, but not
 if it was in 2003.
-Finish[NOT ENOUGH INFO]</p><p class="pdf-element">I am not sure if this claim is true or not.</p><p class="pdf-element">21</p></div></div><div class="pdf-page"><div class="pdf-content"><p class="pdf-element">Published as a conference paper at ICLR 2023</p><p class="pdf-element">C.3 WEBSHOP</p><p class="pdf-element">Table 6: Prompts used for the Webshop experiments in Section 4. We use the prompt on the left for
-Act, and use the prompt on the right (add reasoning) for ReAct.</p><p class="pdf-element">Instruction: i would like a 3 ounce bottle of bright citrus deodorant for sensitive skin, and price lower than 50.00 dollars</p><p class="pdf-element">Act
+Finish[NOT ENOUGH INFO]</p><p class="pdf-element" data-original-size="6.97">I am not sure if this claim is true or not.</p><p class="pdf-element" data-original-size="9.96">21</p><p class="pdf-element" data-original-size="9.96">Published as a conference paper at ICLR 2023</p><p class="pdf-element" data-original-size="9.96">C.3 WEBSHOP</p><p class="pdf-element" data-original-size="9.96">Table 6: Prompts used for the Webshop experiments in Section 4. We use the prompt on the left for
+Act, and use the prompt on the right (add reasoning) for ReAct.</p><p class="pdf-element" data-original-size="6.97">Instruction: i would like a 3 ounce bottle of bright citrus deodorant for sensitive skin, and price lower than 50.00 dollars</p><p class="pdf-element" data-original-size="6.97">Act
 Action: search(cid:2)3 ounce bright citrus deodorant sensitive skin(cid:3)
 Observation:
 (cid:2) Back to Search (cid:3)
 Page 1 (Total results: 50)
-(cid:2)Next(cid:3)</p><p class="pdf-element">(cid:2)B078GWRC1J(cid:3)
+(cid:2)Next(cid:3)</p><p class="pdf-element" data-original-size="6.97">(cid:2)B078GWRC1J(cid:3)
 Bright Citrus Deodorant by Earth Mama | Natural and Safe for
 Sensitive Skin, Pregnancy and Breastfeeding, Contains Organic
 Calendula 3-Ounce
@@ -956,7 +956,7 @@ Barrel and Oak - Aluminum-Free Deodorant, Deodorant for Men
 , Essential Oil-Based Scent, 24-Hour Odor Protection, Cedar
 &amp; Patchouli Blend, Gentle on Sensitive Skin (Mountain Sage,
 2.7 oz, 2-Pack)
-$15.95</p><p class="pdf-element">Action: click(cid:2)B078GWRC1J(cid:3)
+$15.95</p><p class="pdf-element" data-original-size="6.97">Action: click(cid:2)B078GWRC1J(cid:3)
 Observation:
 (cid:2)Back to Search(cid:3)
 (cid:2)Prev(cid:3)
@@ -972,13 +972,13 @@ Rating: N.A.
 [Description]
 [Features]
 [Reviews]
-[Buy Now]</p><p class="pdf-element">Action: click[bright citrus]
-Observation: You have clicked bright citrus.</p><p class="pdf-element">Action: click[3 ounce (pack of 1)]
-Observation: You have clicked 3 ounce (pack of 1).</p><p class="pdf-element">Action: click[Buy Now]</p><p class="pdf-element">ReAct</p><p class="pdf-element">Action: search(cid:2)3 ounce bright citrus deodorant sensitive skin
+[Buy Now]</p><p class="pdf-element" data-original-size="6.97">Action: click[bright citrus]
+Observation: You have clicked bright citrus.</p><p class="pdf-element" data-original-size="6.97">Action: click[3 ounce (pack of 1)]
+Observation: You have clicked 3 ounce (pack of 1).</p><p class="pdf-element" data-original-size="6.97">Action: click[Buy Now]</p><p class="pdf-element" data-original-size="6.97">ReAct</p><p class="pdf-element" data-original-size="6.97">Action: search(cid:2)3 ounce bright citrus deodorant sensitive skin
 Observation:
 (cid:2) Back to Search (cid:3)
 Page 1 (Total results: 50)
-(cid:2)Next(cid:3)</p><p class="pdf-element">(cid:2)B078GWRC1J(cid:3)
+(cid:2)Next(cid:3)</p><p class="pdf-element" data-original-size="6.97">(cid:2)B078GWRC1J(cid:3)
 Bright Citrus Deodorant by Earth Mama | Natural and Safe for
 Sensitive Skin, Pregnancy and Breastfeeding, Contains Organic
 Calendula 3-Ounce
@@ -993,9 +993,9 @@ Barrel and Oak - Aluminum-Free Deodorant, Deodorant for Men
 , Essential Oil-Based Scent, 24-Hour Odor Protection, Cedar
 &amp; Patchouli Blend, Gentle on Sensitive Skin (Mountain Sage,
 2.7 oz, 2-Pack)
-$15.95</p><p class="pdf-element">Action: think[B078GWRC1J and B078GTKVXY are bright citrus
+$15.95</p><p class="pdf-element" data-original-size="6.97">Action: think[B078GWRC1J and B078GTKVXY are bright citrus
 deodorant less then 50 dollars. I can check B078GWRC1J ﬁrst.
-Observation: OK.</p><p class="pdf-element">Action: click(cid:2)B078GWRC1J(cid:3)
+Observation: OK.</p><p class="pdf-element" data-original-size="6.97">Action: click(cid:2)B078GWRC1J(cid:3)
 Observation:
 (cid:2)Back to Search(cid:3)
 (cid:2)Prev(cid:3)
@@ -1011,12 +1011,12 @@ Rating: N.A.
 [Description]
 [Features]
 [Reviews]
-[Buy Now]</p><p class="pdf-element">Action: think[For 3 ounce bottle of bright citrus deodorant
+[Buy Now]</p><p class="pdf-element" data-original-size="6.97">Action: think[For 3 ounce bottle of bright citrus deodorant
 for sensitive skin, the item has options ’bright citrus’
 and ’3 ounce (pack of 1)’ and seems good to buy.]
-Observation: OK.</p><p class="pdf-element">Action: click[bright citrus]
-Observation: You have clicked bright citrus.</p><p class="pdf-element">Action: click[3 ounce (pack of 1)]
-Observation: You have clicked 3 ounce (pack of 1).</p><p class="pdf-element">Action: click[Buy Now]</p><p class="pdf-element">22</p></div></div><div class="pdf-page"><div class="pdf-content"><p class="pdf-element">Published as a conference paper at ICLR 2023</p><p class="pdf-element">C.4 ALFWORLD</p><p class="pdf-element">Table 7: An Act prompt on the ALFWorld clean task. No thoughts are provided.</p><p class="pdf-element">The fridge 1 is open.</p><p class="pdf-element">In it, you see a cup 3, a egg 2, a</p><p class="pdf-element">Looking quickly around you, you see a cabinet</p><p class="pdf-element">You are in the middle of a room.
+Observation: OK.</p><p class="pdf-element" data-original-size="6.97">Action: click[bright citrus]
+Observation: You have clicked bright citrus.</p><p class="pdf-element" data-original-size="6.97">Action: click[3 ounce (pack of 1)]
+Observation: You have clicked 3 ounce (pack of 1).</p><p class="pdf-element" data-original-size="6.97">Action: click[Buy Now]</p><p class="pdf-element" data-original-size="9.96">22</p><p class="pdf-element" data-original-size="9.96">Published as a conference paper at ICLR 2023</p><p class="pdf-element" data-original-size="9.96">C.4 ALFWORLD</p><p class="pdf-element" data-original-size="9.96">Table 7: An Act prompt on the ALFWorld clean task. No thoughts are provided.</p><p class="pdf-element" data-original-size="6.97">The fridge 1 is open.</p><p class="pdf-element" data-original-size="6.97">In it, you see a cup 3, a egg 2, a</p><p class="pdf-element" data-original-size="6.97">Looking quickly around you, you see a cabinet</p><p class="pdf-element" data-original-size="6.97">You are in the middle of a room.
 13, a cabinet 12, a cabinet 11, a cabinet 10, a cabinet 9, a cabinet 8, a cabinet
 7, a cabinet 6, a cabinet 5, a cabinet 4, a cabinet 3, a cabinet 2, a cabinet
 1, a coffeemachine 1, a countertop 1, a diningtable 1, a drawer 1, a fridge 1, a
@@ -1046,7 +1046,7 @@ On the diningtable 1, you see a apple 1, a bread 1, a butterknife 2, a cup 2, a 
 2, a knife 2, a knife 1, a ladle 1, a mug 2, a mug 1, a pan 2, a peppershaker 1, a
 spatula 3, a tomato 2, and a tomato 1.
 &gt; put lettuce 1 in/on diningtable 1
-You put the lettuce 1 in/on the diningtable 1.</p><p class="pdf-element">Next, I need to put it in/on diningtable 1.</p><p class="pdf-element">23</p></div></div><div class="pdf-page"><div class="pdf-content"><p class="pdf-element">Published as a conference paper at ICLR 2023</p><p class="pdf-element">Table 8: An ReAct prompt on the ALFWorld clean task.</p><p class="pdf-element">I</p><p class="pdf-element">The fridge 1 is open.</p><p class="pdf-element">First I need to find a lettuce.</p><p class="pdf-element">A lettuce is more likely to appear in</p><p class="pdf-element">Looking quickly around you, you see a cabinet</p><p class="pdf-element">To solve the task, I need to find and take a lettuce, then clean it with</p><p class="pdf-element">You are in the middle of a room.
+You put the lettuce 1 in/on the diningtable 1.</p><p class="pdf-element" data-original-size="6.97">Next, I need to put it in/on diningtable 1.</p><p class="pdf-element" data-original-size="9.96">23</p><p class="pdf-element" data-original-size="9.96">Published as a conference paper at ICLR 2023</p><p class="pdf-element" data-original-size="9.96">Table 8: An ReAct prompt on the ALFWorld clean task.</p><p class="pdf-element" data-original-size="6.97">I</p><p class="pdf-element" data-original-size="6.97">The fridge 1 is open.</p><p class="pdf-element" data-original-size="6.97">First I need to find a lettuce.</p><p class="pdf-element" data-original-size="6.97">A lettuce is more likely to appear in</p><p class="pdf-element" data-original-size="6.97">Looking quickly around you, you see a cabinet</p><p class="pdf-element" data-original-size="6.97">To solve the task, I need to find and take a lettuce, then clean it with</p><p class="pdf-element" data-original-size="6.97">You are in the middle of a room.
 13, a cabinet 12, a cabinet 11, a cabinet 10, a cabinet 9, a cabinet 8, a cabinet
 7, a cabinet 6, a cabinet 5, a cabinet 4, a cabinet 3, a cabinet 2, a cabinet
 1, a coffeemachine 1, a countertop 1, a diningtable 1, a drawer 1, a fridge 1, a
@@ -1088,7 +1088,7 @@ On the diningtable 1, you see a apple 1, a bread 1, a butterknife 2, a cup 2, a 
 2, a knife 2, a knife 1, a ladle 1, a mug 2, a mug 1, a pan 2, a peppershaker 1, a
 spatula 3, a tomato 2, and a tomato 1.
 &gt; put lettuce 1 in/on diningtable 1
-You put the lettuce 1 in/on the diningtable 1.</p><p class="pdf-element">Next, I need to go to sinkbasin (1) and clean</p><p class="pdf-element">Next, I need to put it in/on diningtable 1.</p><p class="pdf-element">In it, you see a cup 3, a egg 2, a</p><p class="pdf-element">Now I take a lettuce (1).</p><p class="pdf-element">Now I find a lettuce (1).</p><p class="pdf-element">Next, I need to take it.</p><p class="pdf-element">24</p></div></div><div class="pdf-page"><div class="pdf-content"><p class="pdf-element">Published as a conference paper at ICLR 2023</p><p class="pdf-element">Table 9: An ReAct-IM prompt on the ALFWorld clean task.</p><p class="pdf-element">The fridge 1 is open.</p><p class="pdf-element">First I need to find a lettuce.</p><p class="pdf-element">First I need to find a lettuce.</p><p class="pdf-element">First I need to find a lettuce.</p><p class="pdf-element">In it, you see a cup 3, a egg 2, a</p><p class="pdf-element">Looking quickly around you, you see a cabinet</p><p class="pdf-element">To solve the task, I need to find and take a lettuce, then clean it with</p><p class="pdf-element">You are in the middle of a room.
+You put the lettuce 1 in/on the diningtable 1.</p><p class="pdf-element" data-original-size="6.97">Next, I need to go to sinkbasin (1) and clean</p><p class="pdf-element" data-original-size="6.97">Next, I need to put it in/on diningtable 1.</p><p class="pdf-element" data-original-size="6.97">In it, you see a cup 3, a egg 2, a</p><p class="pdf-element" data-original-size="6.97">Now I find a lettuce (1).</p><p class="pdf-element" data-original-size="6.97">Now I take a lettuce (1).</p><p class="pdf-element" data-original-size="6.97">Next, I need to take it.</p><p class="pdf-element" data-original-size="9.96">24</p><p class="pdf-element" data-original-size="9.96">Published as a conference paper at ICLR 2023</p><p class="pdf-element" data-original-size="9.96">Table 9: An ReAct-IM prompt on the ALFWorld clean task.</p><p class="pdf-element" data-original-size="6.97">The fridge 1 is open.</p><p class="pdf-element" data-original-size="6.97">First I need to find a lettuce.</p><p class="pdf-element" data-original-size="6.97">First I need to find a lettuce.</p><p class="pdf-element" data-original-size="6.97">First I need to find a lettuce.</p><p class="pdf-element" data-original-size="6.97">In it, you see a cup 3, a egg 2, a</p><p class="pdf-element" data-original-size="6.97">Looking quickly around you, you see a cabinet</p><p class="pdf-element" data-original-size="6.97">To solve the task, I need to find and take a lettuce, then clean it with</p><p class="pdf-element" data-original-size="6.97">You are in the middle of a room.
 13, a cabinet 12, a cabinet 11, a cabinet 10, a cabinet 9, a cabinet 8, a cabinet
 7, a cabinet 6, a cabinet 5, a cabinet 4, a cabinet 3, a cabinet 2, a cabinet
 1, a coffeemachine 1, a countertop 1, a diningtable 1, a drawer 1, a fridge 1, a
@@ -1134,13 +1134,13 @@ spatula 3, a tomato 2, and a tomato 1.
 &gt; think:
 OK.
 &gt; put lettuce 1 in/on diningtable 1
-You put the lettuce 1 in/on the diningtable 1.</p><p class="pdf-element">I need to put this cleaned lettuce (1) in/on diningtable 1.</p><p class="pdf-element">I need to put this cleaned lettuce (1) in/on diningtable 1.</p><p class="pdf-element">I need to clean this lettuce (1) using sinkbasin 1.</p><p class="pdf-element">I need to clean this lettuce (1) using sinkbasin 1.</p><p class="pdf-element">First I need to find a lettuce.</p><p class="pdf-element">D TRAJECTORIES</p><p class="pdf-element">D.1 FEVER TRAJECTORIES</p><p class="pdf-element">We provide some trajectories produced by ReAct, CoTand Acton several randomly selected exam-
-ples from the FEVER dev set below. Search results are omitted to space.</p><p class="pdf-element">25</p></div></div><div class="pdf-page"><div class="pdf-content"><p class="pdf-element">Published as a conference paper at ICLR 2023</p><p class="pdf-element">ReAct
+You put the lettuce 1 in/on the diningtable 1.</p><p class="pdf-element" data-original-size="6.97">I need to put this cleaned lettuce (1) in/on diningtable 1.</p><p class="pdf-element" data-original-size="6.97">I need to put this cleaned lettuce (1) in/on diningtable 1.</p><p class="pdf-element" data-original-size="6.97">I need to clean this lettuce (1) using sinkbasin 1.</p><p class="pdf-element" data-original-size="6.97">I need to clean this lettuce (1) using sinkbasin 1.</p><p class="pdf-element" data-original-size="6.97">First I need to find a lettuce.</p><p class="pdf-element" data-original-size="11.96">D TRAJECTORIES</p><p class="pdf-element" data-original-size="9.96">D.1 FEVER TRAJECTORIES</p><p class="pdf-element" data-original-size="9.96">We provide some trajectories produced by ReAct, CoTand Acton several randomly selected exam-
+ples from the FEVER dev set below. Search results are omitted to space.</p><p class="pdf-element" data-original-size="9.96">25</p><p class="pdf-element" data-original-size="9.96">Published as a conference paper at ICLR 2023</p><p class="pdf-element" data-original-size="6.97">ReAct
 Claim:
 Thought 1:
 Action 1:
 Observation 1:
-Thought 2:</p><p class="pdf-element">Action 2:
+Thought 2:</p><p class="pdf-element" data-original-size="6.97">Action 2:
 Observation 2:
 Act
 Claim:
@@ -1150,7 +1150,7 @@ Action 2:
 Observation 2:
 CoT
 Claim:
-Thought:</p><p class="pdf-element">Answer:</p><p class="pdf-element">ReAct
+Thought:</p><p class="pdf-element" data-original-size="6.97">Answer:</p><p class="pdf-element" data-original-size="6.97">ReAct
 Claim:
 Thought 1:
 Action 1:
@@ -1166,11 +1166,11 @@ Action 2:
 Observation 2:
 CoT
 Claim:
-Thought:</p><p class="pdf-element">Answer:</p><p class="pdf-element">ReAct
+Thought:</p><p class="pdf-element" data-original-size="6.97">Answer:</p><p class="pdf-element" data-original-size="6.97">ReAct
 Claim:
-Thought 1:</p><p class="pdf-element">Action 1:
+Thought 1:</p><p class="pdf-element" data-original-size="6.97">Action 1:
 Observation 1:
-Thought 2:</p><p class="pdf-element">Action 2:
+Thought 2:</p><p class="pdf-element" data-original-size="6.97">Action 2:
 Observation 2:
 Thought 3:
 Action 3:
@@ -1183,35 +1183,35 @@ Action 2:
 Observation 2:
 CoT
 Claim:
-Thought:</p><p class="pdf-element">Answer:</p><p class="pdf-element">Example 2491 (gt: REFUTES)</p><p class="pdf-element">Bermuda Triangle is a loosely-defined region in the Pacific Ocean.
+Thought:</p><p class="pdf-element" data-original-size="6.97">Answer:</p><p class="pdf-element" data-original-size="6.97">Example 2491 (gt: REFUTES)</p><p class="pdf-element" data-original-size="6.97">Bermuda Triangle is a loosely-defined region in the Pacific Ocean.
 I need to search Bermuda Triangle and find if it is in the Pacific Ocean.
 Search[Bermuda Triangle]
 Reportedly haunted locations...
 The observation says that it is in the western part of the North Atlantic
 Ocean, so it is not in the Pacific Ocean.
 Finish[REFUTES]
-Episode finished</p><p class="pdf-element">Search[Bermuda Triangle]
-Reportedly haunted locations:...</p><p class="pdf-element">Bermuda Triangle is a loosely-defined region in the Pacific Ocean.
+Episode finished</p><p class="pdf-element" data-original-size="6.97">Search[Bermuda Triangle]
+Reportedly haunted locations:...</p><p class="pdf-element" data-original-size="6.97">Bermuda Triangle is a loosely-defined region in the Pacific Ocean.
 :
 :
 Finish[REFUTES]
-Episode finished</p><p class="pdf-element">Bermuda Triangle is a loosely-defined region in the Pacific Ocean.
+Episode finished</p><p class="pdf-element" data-original-size="6.97">Bermuda Triangle is a loosely-defined region in the Pacific Ocean.
 Let’s think step by step.
 in the Atlantic Ocean.
-REFUTES</p><p class="pdf-element">The Pacific Ocean is not the Atlantic Ocean.</p><p class="pdf-element">The Bermuda Triangle is a loosely-defined region</p><p class="pdf-element">Example 5908 (gt: SUPPORTS)</p><p class="pdf-element">Princess Mononoke is a film.
+REFUTES</p><p class="pdf-element" data-original-size="6.97">The Pacific Ocean is not the Atlantic Ocean.</p><p class="pdf-element" data-original-size="6.97">The Bermuda Triangle is a loosely-defined region</p><p class="pdf-element" data-original-size="6.97">Example 5908 (gt: SUPPORTS)</p><p class="pdf-element" data-original-size="6.97">Princess Mononoke is a film.
 I need to search Princess Mononoke and find if it is a film.
 Search[Princess Mononoke]
 Princess Mononoke ...
 From the observation, it says that Princess Mononoke is a film.
 Finish[SUPPORTS]
-Episode finished</p><p class="pdf-element">Princess Mononoke is a film.
+Episode finished</p><p class="pdf-element" data-original-size="6.97">Princess Mononoke is a film.
 Search[Princess Mononoke]
 Princess Mononoke ...
 Finish[SUPPORTS]
-Episode finished</p><p class="pdf-element">Princess Mononoke is a film.
+Episode finished</p><p class="pdf-element" data-original-size="6.97">Princess Mononoke is a film.
 Let’s think step by step.
 films.
-SUPPORTS</p><p class="pdf-element">Princess Mononoke is a movie, and movies are</p><p class="pdf-element">Example 1951 (gt: REFUTES)</p><p class="pdf-element">Soyuz was part of the American space program.
+SUPPORTS</p><p class="pdf-element" data-original-size="6.97">Princess Mononoke is a movie, and movies are</p><p class="pdf-element" data-original-size="6.97">Example 1951 (gt: REFUTES)</p><p class="pdf-element" data-original-size="6.97">Soyuz was part of the American space program.
 I need to search Soyuz and find if it was part of the American space
 program.
 Search[Soyuz]
@@ -1222,19 +1222,19 @@ Search[American space program]
 The space policy...
 It does not mention Soyuz, so I am not sure if this claim is true or not.
 Finish[NOT ENOUGH INFO]
-Episode finished</p><p class="pdf-element">Soyuz was part of the American space program.
+Episode finished</p><p class="pdf-element" data-original-size="6.97">Soyuz was part of the American space program.
 Search[Soyuz]
 Soyuz is a transliteration...
 Finish[NOT ENOUGH INFO]
-Episode finished</p><p class="pdf-element">Soyuz was part of the American space program.
+Episode finished</p><p class="pdf-element" data-original-size="6.97">Soyuz was part of the American space program.
 Let’s think step by step.
 space program is NASA. NASA and Russia have worked together on the
 International Space Station.
-SUPPORTS</p><p class="pdf-element">Soyuz is a Russian spacecraft.</p><p class="pdf-element">The American</p><p class="pdf-element">26</p></div></div><div class="pdf-page"><div class="pdf-content"><p class="pdf-element">Published as a conference paper at ICLR 2023</p><p class="pdf-element">ReAct
+SUPPORTS</p><p class="pdf-element" data-original-size="6.97">Soyuz is a Russian spacecraft.</p><p class="pdf-element" data-original-size="6.97">The American</p><p class="pdf-element" data-original-size="9.96">26</p><p class="pdf-element" data-original-size="9.96">Published as a conference paper at ICLR 2023</p><p class="pdf-element" data-original-size="6.97">ReAct
 Claim:
-Thought 1:</p><p class="pdf-element">Action 1:
+Thought 1:</p><p class="pdf-element" data-original-size="6.97">Action 1:
 Observation 1:
-Thought 2:</p><p class="pdf-element">Action 2:
+Thought 2:</p><p class="pdf-element" data-original-size="6.97">Action 2:
 Observation 2:
 Act
 Claim:
@@ -1243,7 +1243,7 @@ Action 2:
 Observation 2:
 CoT
 Claim:
-Thought:</p><p class="pdf-element">Answer:</p><p class="pdf-element">Example 3208 (gt: REFUTES)</p><p class="pdf-element">Reign Over Me is an American film made in 2010.
+Thought:</p><p class="pdf-element" data-original-size="6.97">Answer:</p><p class="pdf-element" data-original-size="6.97">Example 3208 (gt: REFUTES)</p><p class="pdf-element" data-original-size="6.97">Reign Over Me is an American film made in 2010.
 I need to search for Reign Over Me and find if it is an American film made
 in 2010.
 Search[Reign Over Me]
@@ -1251,15 +1251,15 @@ Reign Over Me ...
 The observation says that it is an American film made in 2007, so it is not
 made in 2010.
 Finish[REFUTES]
-Episode finished</p><p class="pdf-element">Reign Over Me is an American film made in 2010.
+Episode finished</p><p class="pdf-element" data-original-size="6.97">Reign Over Me is an American film made in 2010.
 Search[Reign Over Me]
 Finish[SUPPORTS]
-Episode finished</p><p class="pdf-element">Reign Over Me is an American film made in 2010.
+Episode finished</p><p class="pdf-element" data-original-size="6.97">Reign Over Me is an American film made in 2010.
 Let’s think step by step.
 it is.
-SUPPORTS</p><p class="pdf-element">Second, was it made in 2010? Yes, it was.</p><p class="pdf-element">First, is Reign Over Me an American film?</p><p class="pdf-element">Yes,</p><p class="pdf-element">D.2 ALFWORLD TRAJECTORIES</p><p class="pdf-element">We provide an example trajectory of ReAct, Act, and ReAct-IM on the same ALFWorld game,
+SUPPORTS</p><p class="pdf-element" data-original-size="6.97">Second, was it made in 2010? Yes, it was.</p><p class="pdf-element" data-original-size="6.97">First, is Reign Over Me an American film?</p><p class="pdf-element" data-original-size="6.97">Yes,</p><p class="pdf-element" data-original-size="9.96">D.2 ALFWORLD TRAJECTORIES</p><p class="pdf-element" data-original-size="9.96">We provide an example trajectory of ReAct, Act, and ReAct-IM on the same ALFWorld game,
 pick_clean_then_place_in_recep-Knife-None-CounterTop-10/
-trial_T20190909_110445_675754.</p><p class="pdf-element">D.2.1 REAC T TRAJECTORY</p><p class="pdf-element">ReAct is able to correctly ﬁnd the knife, clean it, and then place it on a countertop.</p><p class="pdf-element">27</p></div></div><div class="pdf-page"><div class="pdf-content"><p class="pdf-element">Published as a conference paper at ICLR 2023</p><p class="pdf-element">ReAct ALFWorld trajectory</p><p class="pdf-element">First I need to find a knife.</p><p class="pdf-element">put a clean knife in countertop.</p><p class="pdf-element">I can check one by one, starting with</p><p class="pdf-element">A knife is more likely to appear in cabinet</p><p class="pdf-element">Looking quickly around you, you see a cabinet 6, a</p><p class="pdf-element">To solve the task, I need to find and take a knife, then clean it with</p><p class="pdf-element">You are in the middle of a room.
+trial_T20190909_110445_675754.</p><p class="pdf-element" data-original-size="9.96">D.2.1 REAC T TRAJECTORY</p><p class="pdf-element" data-original-size="9.96">ReAct is able to correctly ﬁnd the knife, clean it, and then place it on a countertop.</p><p class="pdf-element" data-original-size="9.96">27</p><p class="pdf-element" data-original-size="9.96">Published as a conference paper at ICLR 2023</p><p class="pdf-element" data-original-size="6.97">ReAct ALFWorld trajectory</p><p class="pdf-element" data-original-size="6.97">First I need to find a knife.</p><p class="pdf-element" data-original-size="6.97">put a clean knife in countertop.</p><p class="pdf-element" data-original-size="6.97">I can check one by one, starting with</p><p class="pdf-element" data-original-size="6.97">A knife is more likely to appear in cabinet</p><p class="pdf-element" data-original-size="6.97">Looking quickly around you, you see a cabinet 6, a</p><p class="pdf-element" data-original-size="6.97">To solve the task, I need to find and take a knife, then clean it with</p><p class="pdf-element" data-original-size="6.97">You are in the middle of a room.
 cabinet 5, a cabinet 4, a cabinet 3, a cabinet 2, a cabinet 1, a coffeemachine 1, a
 countertop 3, a countertop 2, a countertop 1, a drawer 3, a drawer 2, a drawer 1, a
 fridge 1, a garbagecan 1, a microwave 1, a shelf 3, a shelf 2, a shelf 1, a sinkbasin
@@ -1313,10 +1313,10 @@ OK.
 &gt; go to countertop 1
 On the countertop 1, you see a lettuce 2, a mug 2, a peppershaker 1, and a spoon 2.
 &gt; put knife 1 in/on countertop 1
-You put the knife 1 in/on the countertop 1.</p><p class="pdf-element">Next, I need to go to sinkbasin (1) and clean it.</p><p class="pdf-element">Next, I need to put it in/on countertop 1.</p><p class="pdf-element">Next, I need to take it.</p><p class="pdf-element">Now I find a knife (1).</p><p class="pdf-element">Now I take a knife (1).</p><p class="pdf-element">D.2.2 AC T TRAJECTORY</p><p class="pdf-element">Act is able to correctly ﬁnd the knife, but tries to clean it using a sinkbasin before actually going
+You put the knife 1 in/on the countertop 1.</p><p class="pdf-element" data-original-size="6.97">Next, I need to go to sinkbasin (1) and clean it.</p><p class="pdf-element" data-original-size="6.97">Next, I need to put it in/on countertop 1.</p><p class="pdf-element" data-original-size="6.97">Next, I need to take it.</p><p class="pdf-element" data-original-size="6.97">Now I take a knife (1).</p><p class="pdf-element" data-original-size="6.97">Now I find a knife (1).</p><p class="pdf-element" data-original-size="9.96">D.2.2 AC T TRAJECTORY</p><p class="pdf-element" data-original-size="9.96">Act is able to correctly ﬁnd the knife, but tries to clean it using a sinkbasin before actually going
 to the sinkbasin. From there on, the model is unable to recover, and is stuck repeating the same
 sequence of commands. With ReAct, an existing thought would have concretely identiﬁed that the
-knife had been taken, and that the next subgoal was to go to a sinkbasin to clean it.</p><p class="pdf-element">28</p></div></div><div class="pdf-page"><div class="pdf-content"><p class="pdf-element">Published as a conference paper at ICLR 2023</p><p class="pdf-element">Act ALFWorld trajectory</p><p class="pdf-element">put a clean knife in countertop.</p><p class="pdf-element">Looking quickly around you, you see a cabinet 6, a</p><p class="pdf-element">You are in the middle of a room.
+knife had been taken, and that the next subgoal was to go to a sinkbasin to clean it.</p><p class="pdf-element" data-original-size="9.96">28</p><p class="pdf-element" data-original-size="9.96">Published as a conference paper at ICLR 2023</p><p class="pdf-element" data-original-size="6.97">Act ALFWorld trajectory</p><p class="pdf-element" data-original-size="6.97">put a clean knife in countertop.</p><p class="pdf-element" data-original-size="6.97">Looking quickly around you, you see a cabinet 6, a</p><p class="pdf-element" data-original-size="6.97">You are in the middle of a room.
 cabinet 5, a cabinet 4, a cabinet 3, a cabinet 2, a cabinet 1, a coffeemachine 1, a
 countertop 3, a countertop 2, a countertop 1, a drawer 3, a drawer 2, a drawer 1, a
 fridge 1, a garbagecan 1, a microwave 1, a shelf 3, a shelf 2, a shelf 1, a sinkbasin
@@ -1378,11 +1378,11 @@ Nothing happens.
 &gt; go to countertop 1
 On the countertop 1, you see a lettuce 2, a mug 2, a peppershaker 1, and a spoon 2.
 &gt; clean knife 1 with sinkbasin 1
-Nothing happens.</p><p class="pdf-element">D.2.3 REAC T-IM TRAJECTORY</p><p class="pdf-element">ReAct-IM is able to correctly ﬁnd the knife, but is unable to clean it as well. The LLM then
+Nothing happens.</p><p class="pdf-element" data-original-size="9.96">D.2.3 REAC T-IM TRAJECTORY</p><p class="pdf-element" data-original-size="9.96">ReAct-IM is able to correctly ﬁnd the knife, but is unable to clean it as well. The LLM then
 gets stuck trying to place this knife on a countertop. One possible issue is the incorrect thought
 think: I need to find a clean knife., which seems to trick the LLM in believing
 that the knife is already cleaned. In ReAct, this sequence of subgoals would be concretely captured
-by each thought.</p><p class="pdf-element">29</p></div></div><div class="pdf-page"><div class="pdf-content"><p class="pdf-element">Published as a conference paper at ICLR 2023</p><p class="pdf-element">ReAct-IM ALFWorld trajectory</p><p class="pdf-element">I need to find a clean knife.</p><p class="pdf-element">I need to find a clean knife.</p><p class="pdf-element">I need to find a clean knife.</p><p class="pdf-element">put a clean knife in countertop.</p><p class="pdf-element">I need to put this knife (1) in/on countertop 1.</p><p class="pdf-element">Looking quickly around you, you see a cabinet 6, a</p><p class="pdf-element">To solve the task, I need to find and take a clean knife, then put it in</p><p class="pdf-element">You are in the middle of a room.
+by each thought.</p><p class="pdf-element" data-original-size="9.96">29</p><p class="pdf-element" data-original-size="9.96">Published as a conference paper at ICLR 2023</p><p class="pdf-element" data-original-size="6.97">ReAct-IM ALFWorld trajectory</p><p class="pdf-element" data-original-size="6.97">I need to find a clean knife.</p><p class="pdf-element" data-original-size="6.97">I need to find a clean knife.</p><p class="pdf-element" data-original-size="6.97">I need to find a clean knife.</p><p class="pdf-element" data-original-size="6.97">put a clean knife in countertop.</p><p class="pdf-element" data-original-size="6.97">I need to put this knife (1) in/on countertop 1.</p><p class="pdf-element" data-original-size="6.97">Looking quickly around you, you see a cabinet 6, a</p><p class="pdf-element" data-original-size="6.97">To solve the task, I need to find and take a clean knife, then put it in</p><p class="pdf-element" data-original-size="6.97">You are in the middle of a room.
 cabinet 5, a cabinet 4, a cabinet 3, a cabinet 2, a cabinet 1, a coffeemachine 1, a
 countertop 3, a countertop 2, a countertop 1, a drawer 3, a drawer 2, a drawer 1, a
 fridge 1, a garbagecan 1, a microwave 1, a shelf 3, a shelf 2, a shelf 1, a sinkbasin
@@ -1434,14 +1434,14 @@ OK.
 &gt; put knife 1 in/on countertop 1
 Nothing happens.
 &gt; think:
-OK.</p><p class="pdf-element">I need to put this knife (1) in/on countertop 1.</p><p class="pdf-element">I need to put this knife (1) in/on countertop 1.</p><p class="pdf-element">I need to put this knife (1) in/on countertop 1.</p><p class="pdf-element">I need to put this knife (1) in/on countertop 1.</p><p class="pdf-element">I need to put this knife (1) in/on countertop 1.</p><p class="pdf-element">I need to put this knife (1) in/on countertop 1.</p><p class="pdf-element">I need to put this knife (1) in/on countertop 1.</p><p class="pdf-element">30</p></div></div><div class="pdf-page"><div class="pdf-content"><p class="pdf-element">Published as a conference paper at ICLR 2023</p><p class="pdf-element">D.3 WEBSHOP TRAJECTORIES</p><p class="pdf-element">Table 10: Example trajectories for Webshop predicted by Act and ReAct. Compared to Act,
-ReAct uses reasoning to ﬁnd products that satisfy all target attributes.</p><p class="pdf-element">Instruction: get me a sixteen pack of apple cinnamon freeze dried banana chips, and price lower than 50.00 dollars</p><p class="pdf-element">Act
+OK.</p><p class="pdf-element" data-original-size="6.97">I need to put this knife (1) in/on countertop 1.</p><p class="pdf-element" data-original-size="6.97">I need to put this knife (1) in/on countertop 1.</p><p class="pdf-element" data-original-size="6.97">I need to put this knife (1) in/on countertop 1.</p><p class="pdf-element" data-original-size="6.97">I need to put this knife (1) in/on countertop 1.</p><p class="pdf-element" data-original-size="6.97">I need to put this knife (1) in/on countertop 1.</p><p class="pdf-element" data-original-size="6.97">I need to put this knife (1) in/on countertop 1.</p><p class="pdf-element" data-original-size="6.97">I need to put this knife (1) in/on countertop 1.</p><p class="pdf-element" data-original-size="9.96">30</p><p class="pdf-element" data-original-size="9.96">Published as a conference paper at ICLR 2023</p><p class="pdf-element" data-original-size="9.96">D.3 WEBSHOP TRAJECTORIES</p><p class="pdf-element" data-original-size="9.96">Table 10: Example trajectories for Webshop predicted by Act and ReAct. Compared to Act,
+ReAct uses reasoning to ﬁnd products that satisfy all target attributes.</p><p class="pdf-element" data-original-size="6.97">Instruction: get me a sixteen pack of apple cinnamon freeze dried banana chips, and price lower than 50.00 dollars</p><p class="pdf-element" data-original-size="6.97">Act
 Action: search(cid:2)sixteen pack apple cinnamon freeze dried banana
 chips(cid:3)
 Observation:
 (cid:2) Back to Search (cid:3)
 Page 1 (Total results: 50)
-(cid:2)Next(cid:3)</p><p class="pdf-element">(cid:2)B0061IVFZE(cid:3)
+(cid:2)Next(cid:3)</p><p class="pdf-element" data-original-size="6.97">(cid:2)B0061IVFZE(cid:3)
 Brothers-ALL-Natural Fruit Crisps, Strawberry Banana, 0.42 -
 Ounce (Pack of 100)
 $85.0
@@ -1453,7 +1453,7 @@ $18.99
 Nature’s Turn Freeze-Dried Fruit Snacks - Banana Crisps - Perfect
 For School Lunches or an On-The-Go Snack - No Sugar Added,
 Non GMO, Gluten Free, Nothing Artiﬁcial (0.53oz) 6-Pack
-$12.99</p><p class="pdf-element">Action: click(cid:2)B0061IVFZE(cid:3)
+$12.99</p><p class="pdf-element" data-original-size="6.97">Action: click(cid:2)B0061IVFZE(cid:3)
 Observation:
 (cid:2)Back to Search(cid:3)
 (cid:2)Prev(cid:3)
@@ -1465,12 +1465,12 @@ Rating: N.A.
 [Description]
 [Features]
 [Reviews]
-[Buy Now]</p><p class="pdf-element">Action: click[Buy Now]</p><p class="pdf-element">ReAct</p><p class="pdf-element">Action: search(cid:2)sixteen pack apple cinnamon freeze dried banana
+[Buy Now]</p><p class="pdf-element" data-original-size="6.97">Action: click[Buy Now]</p><p class="pdf-element" data-original-size="6.97">ReAct</p><p class="pdf-element" data-original-size="6.97">Action: search(cid:2)sixteen pack apple cinnamon freeze dried banana
 chips(cid:3)
 Observation:
 (cid:2) Back to Search (cid:3)
 Page 1 (Total results: 50)
-(cid:2)Next(cid:3)</p><p class="pdf-element">(cid:2)B0061IVFZE(cid:3)
+(cid:2)Next(cid:3)</p><p class="pdf-element" data-original-size="6.97">(cid:2)B0061IVFZE(cid:3)
 Brothers-ALL-Natural Fruit Crisps, Strawberry Banana, 0.42 -
 Ounce (Pack of 100)
 $85.0
@@ -1482,11 +1482,11 @@ $18.99
 Nature’s Turn Freeze-Dried Fruit Snacks - Banana Crisps - Perfect
 For School Lunches or an On-The-Go Snack - No Sugar Added,
 Non GMO, Gluten Free, Nothing Artiﬁcial (0.53oz) 6-Pack
-$12.99</p><p class="pdf-element">Action: think[B0061IVFZE is strawberry banana, not apple cinnamon.
+$12.99</p><p class="pdf-element" data-original-size="6.97">Action: think[B0061IVFZE is strawberry banana, not apple cinnamon.
 B096H2P6G2 is fruit snacks, not freeze dried banana chips.
 B092JLLYK6 is banana crisps, not apple cinnamon. I can check
 B092JLLYK6 ﬁrst.
-Observation: OK.</p><p class="pdf-element">Action: click(cid:2)B092JLLYK6(cid:3)
+Observation: OK.</p><p class="pdf-element" data-original-size="6.97">Action: click(cid:2)B092JLLYK6(cid:3)
 Observation:
 (cid:2)Back to Search(cid:3)
 (cid:2)Prev(cid:3)
@@ -1503,21 +1503,21 @@ Rating: N.A.
 [Description]
 [Features]
 [Reviews]
-[Buy Now]</p><p class="pdf-element">Action: think[For sixteen pack of apple cinnamon freeze dried banana
+[Buy Now]</p><p class="pdf-element" data-original-size="6.97">Action: think[For sixteen pack of apple cinnamon freeze dried banana
 chips, the item has options ’apple cinnamon’ and ’0.53 ounce (pack of
 16)’ and seems good to buy.]
-Observation: OK.</p><p class="pdf-element">Action: click[apple cinnamon]
-Observation: You have clicked apple cinnamon.</p><p class="pdf-element">Action: click[0.53 ounce (pack of 16)]
-Observation: You have clicked 0.53 ounce (pack of 16).</p><p class="pdf-element">Action: click[Buy Now]</p><p class="pdf-element">Score: 0.125</p><p class="pdf-element">Score: 1.0</p><p class="pdf-element">31</p></div></div><div class="pdf-page"><div class="pdf-content"><p class="pdf-element">Published as a conference paper at ICLR 2023</p><p class="pdf-element">E MORE ANALYSIS</p><p class="pdf-element">E.1 SUCCESS AND FAILURE MODES ANALYSIS</p><p class="pdf-element">We provide some examples corresponding to the success and error mode analysis given in Sec. 3.3.
-Search results and non-representative steps are omitted to reduce space.</p><p class="pdf-element">ReAct
-Question:</p><p class="pdf-element">Thought 1:</p><p class="pdf-element">Action 1:
+Observation: OK.</p><p class="pdf-element" data-original-size="6.97">Action: click[apple cinnamon]
+Observation: You have clicked apple cinnamon.</p><p class="pdf-element" data-original-size="6.97">Action: click[0.53 ounce (pack of 16)]
+Observation: You have clicked 0.53 ounce (pack of 16).</p><p class="pdf-element" data-original-size="6.97">Action: click[Buy Now]</p><p class="pdf-element" data-original-size="6.97">Score: 0.125</p><p class="pdf-element" data-original-size="6.97">Score: 1.0</p><p class="pdf-element" data-original-size="9.96">31</p><p class="pdf-element" data-original-size="9.96">Published as a conference paper at ICLR 2023</p><p class="pdf-element" data-original-size="11.96">E MORE ANALYSIS</p><p class="pdf-element" data-original-size="9.96">E.1 SUCCESS AND FAILURE MODES ANALYSIS</p><p class="pdf-element" data-original-size="9.96">We provide some examples corresponding to the success and error mode analysis given in Sec. 3.3.
+Search results and non-representative steps are omitted to reduce space.</p><p class="pdf-element" data-original-size="6.97">ReAct
+Question:</p><p class="pdf-element" data-original-size="6.97">Thought 1:</p><p class="pdf-element" data-original-size="6.97">Action 1:
 Observation 1:
 Action 2:
 Observation 2:
-Thought 3:</p><p class="pdf-element">Action 3:
+Thought 3:</p><p class="pdf-element" data-original-size="6.97">Action 3:
 Observation 3:
 CoT
-Question:</p><p class="pdf-element">Thought:</p><p class="pdf-element">Answer:</p><p class="pdf-element">ReAct
+Question:</p><p class="pdf-element" data-original-size="6.97">Thought:</p><p class="pdf-element" data-original-size="6.97">Answer:</p><p class="pdf-element" data-original-size="6.97">ReAct
 Question:
 Thought 1:
 Action 1:
@@ -1530,13 +1530,13 @@ Action 3:
 Observation 3:
 CoT
 Question:
-Thought:</p><p class="pdf-element">Answer:</p><p class="pdf-element">ReAct
-Question:</p><p class="pdf-element">Thought 1:</p><p class="pdf-element">Action 1:
+Thought:</p><p class="pdf-element" data-original-size="6.97">Answer:</p><p class="pdf-element" data-original-size="6.97">ReAct
+Question:</p><p class="pdf-element" data-original-size="6.97">Thought 1:</p><p class="pdf-element" data-original-size="6.97">Action 1:
 Observation 1:
-Thought 2:</p><p class="pdf-element">Action 2:
+Thought 2:</p><p class="pdf-element" data-original-size="6.97">Action 2:
 CoT
 Question:
-Thought:</p><p class="pdf-element">Answer:</p><p class="pdf-element">Success: True positive</p><p class="pdf-element">Author David Chanoff has collaborated with a U.S. Navy admiral who served as
+Thought:</p><p class="pdf-element" data-original-size="6.97">Answer:</p><p class="pdf-element" data-original-size="6.97">Success: True positive</p><p class="pdf-element" data-original-size="6.97">Author David Chanoff has collaborated with a U.S. Navy admiral who served as
 the ambassador to the United Kingdom under which President?
 I need to search David Chanoff and find the U.S. Navy admiral he
 collaborated with.
@@ -1547,14 +1547,14 @@ William J. Crowe is...
 William J. Crowe served as the ambassador to the United Kingdom under
 President Bill Clinton.
 Finish[Bill Clinton]
-Episode finished</p><p class="pdf-element">So the answer is Bill Clinton.</p><p class="pdf-element">What was the name of the team that represented an Arizona university in
+Episode finished</p><p class="pdf-element" data-original-size="6.97">So the answer is Bill Clinton.</p><p class="pdf-element" data-original-size="6.97">What was the name of the team that represented an Arizona university in
 the conference that covers a broad expanse of the western United States,
 including Arizona, California, and New Mexico?
 Let’s think step by step.
 university in the conference that covers a broad expanse of the western
 United States, including Arizona, California, and New Mexico is Arizona
 State Sun Devils.
-Arizona State Sun Devils</p><p class="pdf-element">The name of the team that represented an Arizona</p><p class="pdf-element">Success: False positive</p><p class="pdf-element">Did the board game San Marco or About Time come out first?
+Arizona State Sun Devils</p><p class="pdf-element" data-original-size="6.97">The name of the team that represented an Arizona</p><p class="pdf-element" data-original-size="6.97">Success: False positive</p><p class="pdf-element" data-original-size="6.97">Did the board game San Marco or About Time come out first?
 I need to search San Marco and About Time, and find which came out first.
 Search[San Marco]
 San Marco is one of the ...
@@ -1563,11 +1563,11 @@ Search[About Time]
 Could not find [About Time].
 About Time is a 2013 film.
 Finish[San Marco]
-Episode finished</p><p class="pdf-element">I need to search About Time next.</p><p class="pdf-element">So San Marco came out first.</p><p class="pdf-element">The was built in venice.</p><p class="pdf-element">Similar:</p><p class="pdf-element">[...].</p><p class="pdf-element">Was Vanderbilt University or Emory University founded first?
+Episode finished</p><p class="pdf-element" data-original-size="6.97">I need to search About Time next.</p><p class="pdf-element" data-original-size="6.97">So San Marco came out first.</p><p class="pdf-element" data-original-size="6.97">The was built in venice.</p><p class="pdf-element" data-original-size="6.97">Similar:</p><p class="pdf-element" data-original-size="6.97">[...].</p><p class="pdf-element" data-original-size="6.97">Was Vanderbilt University or Emory University founded first?
 Let’s think step by step.
 University was founded in 1836.
 University), so Vanderbilt University was founded first.
-Emory University</p><p class="pdf-element">Vanderbilt University was founded in 1873.</p><p class="pdf-element">Emory</p><p class="pdf-element">1873 (Vanderbilt University) &gt; 1836 (Emory</p><p class="pdf-element">Failure: Reasoning error</p><p class="pdf-element">What was the middle name of the actress who was cast alongside Harvey
+Emory University</p><p class="pdf-element" data-original-size="6.97">Vanderbilt University was founded in 1873.</p><p class="pdf-element" data-original-size="6.97">Emory</p><p class="pdf-element" data-original-size="6.97">1873 (Vanderbilt University) &gt; 1836 (Emory</p><p class="pdf-element" data-original-size="6.97">Failure: Reasoning error</p><p class="pdf-element" data-original-size="6.97">What was the middle name of the actress who was cast alongside Harvey
 Fierstein, Linda Hart, Dick Latessa, Clarke Thorell, Mary Bond Davis, Laura
 Bell Bundy, Matthew Morrison, Corey Reynolds, and Marissa Jaret Winokur in
 Hairspray?
@@ -1579,34 +1579,34 @@ Search[Harvey Fierstein]
 Harvey Forbes Fierstein ...
 Harvey Fierstein is an actor, playwright, and screenwriter. I need to
 search Linda Hart next...
-Search[Linda Hart]...</p><p class="pdf-element">Who is older Danny Green or James Worthy?
+Search[Linda Hart]...</p><p class="pdf-element" data-original-size="6.97">Who is older Danny Green or James Worthy?
 Let’s think step by step.
 born in 1961.
 older.
-Danny Green</p><p class="pdf-element">James Worthy was
-1987 (Danny Green) &gt; 1961 (James Worthy), so Danny Green is</p><p class="pdf-element">Danny Green was born in 1987.</p><p class="pdf-element">32</p></div></div><div class="pdf-page"><div class="pdf-content"><p class="pdf-element">Published as a conference paper at ICLR 2023</p><p class="pdf-element">ReAct
-Question:</p><p class="pdf-element">Thought 1:
+Danny Green</p><p class="pdf-element" data-original-size="6.97">James Worthy was
+1987 (Danny Green) &gt; 1961 (James Worthy), so Danny Green is</p><p class="pdf-element" data-original-size="6.97">Danny Green was born in 1987.</p><p class="pdf-element" data-original-size="9.96">32</p><p class="pdf-element" data-original-size="9.96">Published as a conference paper at ICLR 2023</p><p class="pdf-element" data-original-size="6.97">ReAct
+Question:</p><p class="pdf-element" data-original-size="6.97">Thought 1:
 Action 1:
-Observation 1:</p><p class="pdf-element">Thought 2:</p><p class="pdf-element">Failure: Search error</p><p class="pdf-element">What does the goddess associated with the goddess frigg consists of what
+Observation 1:</p><p class="pdf-element" data-original-size="6.97">Thought 2:</p><p class="pdf-element" data-original-size="6.97">Failure: Search error</p><p class="pdf-element" data-original-size="6.97">What does the goddess associated with the goddess frigg consists of what
 tales?
 I need to search goddess frigg and find its associated goddess.
 Search[goddess frigg]
 Could not find goddess frigg.
 origin hypothesis’, ’Freyja (section Relation to Frigg and other goddesses
 and figures)’, ’Eir (redirect from Eir (goddess))’, ’Baldr’].
-I need to search Frigg instead...</p><p class="pdf-element">[’Frigg’, ’Frigg and Freyja common</p><p class="pdf-element">Similar:</p><p class="pdf-element">CoT
-Question:</p><p class="pdf-element">Thought:</p><p class="pdf-element">Answer:</p><p class="pdf-element">Failure: Hallucination</p><p class="pdf-element">What was the first year a scientific journal published by an organization
+I need to search Frigg instead...</p><p class="pdf-element" data-original-size="6.97">[’Frigg’, ’Frigg and Freyja common</p><p class="pdf-element" data-original-size="6.97">Similar:</p><p class="pdf-element" data-original-size="6.97">CoT
+Question:</p><p class="pdf-element" data-original-size="6.97">Thought:</p><p class="pdf-element" data-original-size="6.97">Answer:</p><p class="pdf-element" data-original-size="6.97">Failure: Hallucination</p><p class="pdf-element" data-original-size="6.97">What was the first year a scientific journal published by an organization
 located in the Bronx was published?
 Let’s think step by step. The first year a scientific journal published by
 an organization located in the Bronx was published was 1916.
-1916 (Label:</p><p class="pdf-element">1909)</p><p class="pdf-element">ReAct
+1916 (Label:</p><p class="pdf-element" data-original-size="6.97">1909)</p><p class="pdf-element" data-original-size="6.97">ReAct
 Question:
-Thought 1:</p><p class="pdf-element">Action 1:
-Observation 1:</p><p class="pdf-element">Action 3:
+Thought 1:</p><p class="pdf-element" data-original-size="6.97">Action 1:
+Observation 1:</p><p class="pdf-element" data-original-size="6.97">Action 3:
 Observation 3:
-Thought 4:</p><p class="pdf-element">Action 4:
+Thought 4:</p><p class="pdf-element" data-original-size="6.97">Action 4:
 CoT
-Question:</p><p class="pdf-element">Thought:</p><p class="pdf-element">Answer:</p><p class="pdf-element">Failure: Label ambiguity</p><p class="pdf-element">What nationality is the man who developed the dictator game?
+Question:</p><p class="pdf-element" data-original-size="6.97">Thought:</p><p class="pdf-element" data-original-size="6.97">Answer:</p><p class="pdf-element" data-original-size="6.97">Failure: Label ambiguity</p><p class="pdf-element" data-original-size="6.97">What nationality is the man who developed the dictator game?
 I need to search dictator game, find the man who developed it, then find his
 nationality.
 Search[dictator game]
@@ -1616,9 +1616,24 @@ Search[Amos Tversky]
 Amos Nathan Tversky...
 Amos Tversky is an Israeli cognitive and mathematical psychologist. So the
 man who developed the dictator game is Israeli.
-Finish[Israeli] (label:</p><p class="pdf-element">Israel-American)</p><p class="pdf-element">Kurt Fuller from Stockton, CA appeared in which American Detective Comedy
+Finish[Israeli] (label:</p><p class="pdf-element" data-original-size="6.97">Israel-American)</p><p class="pdf-element" data-original-size="6.97">Kurt Fuller from Stockton, CA appeared in which American Detective Comedy
 Drama television series created by Steve Franks?
 Let’s think step by step.
 Psych is an American Detective Comedy Drama television series created by
 Steve Franks.
-Psych (label:</p><p class="pdf-element">Psych is an American detective comedy-drama)</p><p class="pdf-element">Kurt Fuller from Stockton, CA appeared in Psych.</p><p class="pdf-element">33</p></div></div></div></body></html>
+Psych (label:</p><p class="pdf-element" data-original-size="6.97">Psych is an American detective comedy-drama)</p><p class="pdf-element" data-original-size="6.97">Kurt Fuller from Stockton, CA appeared in Psych.</p><p class="pdf-element" data-original-size="9.96">33</p></div><script>
+    document.getElementById('font-size-selector').addEventListener('change', function() {
+        var baseFontSize = parseInt(this.value);
+        var mostCommonFontSize = 6.973800;
+        var elements = document.getElementsByClassName('pdf-element');
+        for (var i = 0; i < elements.length; i++) {
+            var originalSize = parseFloat(elements[i].getAttribute('data-original-size'));
+            var newSize = (originalSize / mostCommonFontSize) * baseFontSize;
+            elements[i].style.fontSize = newSize + 'px';
+        }
+    });
+    
+    // Initial setup
+    var event = new Event('change');
+    document.getElementById('font-size-selector').dispatchEvent(event);
+    </script></body></html>
